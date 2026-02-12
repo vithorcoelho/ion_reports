@@ -1,0 +1,4 @@
+[bandit]
+# B101: Test for use of assert
+skips = B101
+exclude_dirs = tests

@@ -1,0 +1,312 @@
+{
+  "exam_data": {
+    "patient_id": "ASH042514",
+    "exam_date": "2025-07-02T00:00:00Z",
+    "metabolites": [
+        {
+          "name": "Acetilcarnitina",
+          "value": 0.495
+        },
+        {
+          "name": "Adenosina",
+          "value": 0.974
+        },
+        {
+          "name": "ADMA",
+          "value": 0.25
+        },
+        {
+          "name": "Alanina",
+          "value": 42.4
+        },
+        {
+          "name": "Arginina",
+          "value": 0.347
+        },
+        {
+          "name": "Asparagina",
+          "value": 0.408
+        },
+        {
+          "name": "Aspartato",
+          "value": 11.5
+        },
+        {
+          "name": "Butirilcarnitina",
+          "value": 0.118
+        },
+        {
+          "name": "Carnitina",
+          "value": 1.15
+        },
+        {
+          "name": "Cetoglutarato",
+          "value": 0.0895
+        },
+        {
+          "name": "Cisteina-NEM",
+          "value": 2.35
+        },
+        {
+          "name": "Cistina",
+          "value": 0.191
+        },
+        {
+          "name": "Citrulina",
+          "value": 9.1
+        },
+        {
+          "name": "Fenilalanina",
+          "value": 6.31
+        },
+        {
+          "name": "GABA",
+          "value": 1.71
+        },
+        {
+          "name": "Glicina",
+          "value": 30.0
+        },
+        {
+          "name": "Glutamato",
+          "value": 20.2
+        },
+        {
+          "name": "Glutamina",
+          "value": 21.0
+        },
+        {
+          "name": "Glutationa-NEM",
+          "value": 0.727
+        },
+        {
+          "name": "Guanosina",
+          "value": 0.473
+        },
+        {
+          "name": "Hidroxiprolina",
+          "value": 2.73
+        },
+        {
+          "name": "Histidina",
+          "value": 2.07
+        },
+        {
+          "name": "HMDB0002815",
+          "value": 0.139
+        },
+        {
+          "name": "HMDB0007973",
+          "value": 0.953
+        },
+        {
+          "name": "HMDB0007982",
+          "value": 0.071
+        },
+        {
+          "name": "HMDB0007991",
+          "value": 0.013
+        },
+        {
+          "name": "HMDB0008039",
+          "value": 2.0
+        },
+        {
+          "name": "HMDB0008048",
+          "value": 0.0601
+        },
+        {
+          "name": "HMDB0008102",
+          "value": 0.587
+        },
+        {
+          "name": "HMDB0010384",
+          "value": 0.0246
+        },
+        {
+          "name": "Isoleucina",
+          "value": 4.86
+        },
+        {
+          "name": "Isovalerilcarnitina",
+          "value": 0.0585
+        },
+        {
+          "name": "Lactato",
+          "value": 696.0
+        },
+        {
+          "name": "Leucina",
+          "value": 12.8
+        },
+        {
+          "name": "Lisina",
+          "value": 6.07
+        },
+        {
+          "name": "Malato",
+          "value": 0.0001
+        },
+        {
+          "name": "Metionina",
+          "value": 2.52
+        },
+        {
+          "name": "Ornitina",
+          "value": 1.11
+        },
+        {
+          "name": "Oxiglutationa",
+          "value": 0.0872
+        },
+        {
+          "name": "Oxiglutationa+Glutationa-NEM",
+          "value": 0.8142
+        },
+        {
+          "name": "Palmitoilcarnitina",
+          "value": 0.0604
+        },
+        {
+          "name": "Piruvato",
+          "value": 34.8
+        },
+        {
+          "name": "Prolina",
+          "value": 29.4
+        },
+        {
+          "name": "Propionilcarnitina",
+          "value": 0.0935
+        },
+        {
+          "name": "Quinurenina",
+          "value": 0.0596
+        },
+        {
+          "name": "Serina",
+          "value": 8.19
+        },
+        {
+          "name": "Succinato",
+          "value": 65.1
+        },
+        {
+          "name": "Taurina",
+          "value": 62.4
+        },
+        {
+          "name": "Timina",
+          "value": 9.2
+        },
+        {
+          "name": "Tirosina",
+          "value": 11.3
+        },
+        {
+          "name": "TMAO",
+          "value": 0.242
+        },
+        {
+          "name": "Treonina",
+          "value": 0.484
+        },
+        {
+          "name": "Triptofano",
+          "value": 1.71
+        },
+        {
+          "name": "Urico",
+          "value": 118.0
+        },
+        {
+          "name": "Valina",
+          "value": 15.0
+        },
+        {
+          "name": "Tetradecanoilcarnitina",
+          "value": 0.654
+        }
+    ]
+  },
+  "anamnesis": {
+    "anamnesis_type": "ionnutri",
+    "patient_id": "ASH042514",
+    "objective": "Melhoria de performance no esporte",
+    "personal_data": {
+      "age": 28,
+      "birth_date": "1997-03-12",
+      "age_detail": "28 anos, 3 meses e 0 dia",
+      "gender": "não informado",
+      "weight": 82,
+      "height": 1.83,
+      "bmi": 24.49
+    },
+    "context_factors": {
+      "medical_history": [
+        "Não possuo nenhuma doença listada"
+      ],
+      "intolerances": [],
+      "physical_activity": {
+        "frequency": "7",
+        "type": "não informado",
+        "intensity": "não informado"
+      },
+      "sleep": {
+        "quality": "sempre dorme tranquilamente",
+        "hours": 0.6,
+        "issues": []
+      },
+      "alcohol_consumption": {
+        "frequency": 1,
+        "amount": "1 a 2 vezes na semana"
+      },
+      "medications": [
+        {
+          "name": "Outros",
+          "frequency": "não informado",
+          "dosage": "não informado"
+        },
+        {
+          "name": "Coledue R",
+          "frequency": "não informado",
+          "dosage": "5/10mg"
+        }
+      ],
+      "stress_level": "alto"
+    },
+    "family_history": {
+      "diabetes": "não informado",
+      "hipertensao": "não informado",
+      "cancer": "não informado",
+      "doencas_cardiovasculares": "sim",
+      "grau_parentesco": "avós"
+    },
+    "environmental_exposure": {
+      "poluicao": "não",
+      "exposicao_ocupacional": "não"
+    },
+    "surgeries": [
+      "Rinoseptoplastia"
+    ],
+    "menopause_age": "não informado",
+    "tobacco_use": {
+      "uses_or_used": "não",
+      "frequency": "não se aplica"
+    },
+    "food_allergies": {
+      "has_allergy": "não",
+      "allergy_items": []
+    },
+    "food_avoidance": {
+      "avoids_food": "não",
+      "food_items": []
+    },
+    "supplements": [
+      "Vitaminas",
+      "Whey protein",
+      "Cafeína",
+      "Outros"
+    ]
+  }
+}

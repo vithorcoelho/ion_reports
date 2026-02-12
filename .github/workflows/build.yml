@@ -1,0 +1,110 @@
+  name: Staging deploy
+  on:
+    push:
+      branches:
+        - main
+  jobs:
+    tests:
+      name: Tests
+      runs-on: self-hosted
+      steps:
+        - uses: actions/checkout@v4
+          with:
+            fetch-depth: 0
+        - name: Sonarqube Scan
+          uses: sonarsource/sonarqube-scan-action@v5
+          env:
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+            SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+    build:
+      name: Build
+      runs-on: self-hosted
+      needs: tests
+      if: github.event_name == 'push'
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+
+        - name: Configure AWS credentials ECR
+          uses: aws-actions/configure-aws-credentials@v4.1.0
+          with:
+            aws-access-key-id: ${{ secrets.ECR_AWS_ACCESS_KEY_ID }}
+            aws-secret-access-key: ${{ secrets.ECR_AWS_SECRET_ACCESS_KEY }}
+            aws-region: us-east-2
+
+        - name: Login to Amazon ECR
+          id: login-ecr
+          uses: aws-actions/amazon-ecr-login@v2.0.1
+
+        - name: Get build metadata
+          id: get-metadata
+          run: |
+            echo "commit-hash=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+            echo "commit-full=$(git rev-parse HEAD)" >> $GITHUB_ENV
+            echo "branch=$(git rev-parse --abbrev-ref HEAD)" >> $GITHUB_ENV
+            echo "timestamp=$(date +'%Y%m%d%H%M')" >> $GITHUB_ENV
+            echo "build-time=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> $GITHUB_ENV
+            echo "build-number=${{ github.run_number }}" >> $GITHUB_ENV
+
+        - name: Build, tag, and push the Backend image to Amazon ECR
+          id: build-backend-image
+          env:
+            ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+            ECR_REPOSITORY: ion-nutri
+            IMAGE_TAG: backend-${{ env.commit-hash }}-${{ env.timestamp }}
+          run: |
+            docker build \
+              --build-arg BUILD_TIME="${{ env.build-time }}" \
+              --build-arg GIT_COMMIT="${{ env.commit-hash }}" \
+              --build-arg GIT_BRANCH="${{ env.branch }}" \
+              --build-arg BUILD_NUMBER="${{ env.build-number }}" \
+              --build-arg ENVIRONMENT="staging" \
+              -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
+              -t $ECR_REGISTRY/$ECR_REPOSITORY:backend-latest-staging \
+              -f backend/Dockerfile \
+              ./backend
+            docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+            docker push $ECR_REGISTRY/$ECR_REPOSITORY:backend-latest-staging
+
+        - name: Build, tag, and push the Frontend image to Amazon ECR
+          id: build-frontend-image
+          env:
+            ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+            ECR_REPOSITORY: ion-nutri
+            IMAGE_TAG: frontend-${{ env.commit-hash }}-${{ env.timestamp }}
+          run: |
+            docker build \
+              --build-arg VITE_API_URL=/api \
+              --build-arg NGINX_CONFIG=nginx.staging.conf \
+              -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
+              -t $ECR_REGISTRY/$ECR_REPOSITORY:frontend-latest-staging \
+              -f frontend/Dockerfile \
+              ./frontend
+            docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+            docker push $ECR_REGISTRY/$ECR_REPOSITORY:frontend-latest-staging
+
+        - name: Configure AWS credentials EKS
+          uses: aws-actions/configure-aws-credentials@v4.1.0
+          with:
+            aws-access-key-id: ${{ secrets.EKS_AWS_ACCESS_KEY_ID }}
+            aws-secret-access-key: ${{ secrets.EKS_AWS_SECRET_ACCESS_KEY }}
+            aws-region: us-east-2
+
+        - name: Update kube config
+          id: kubeconfig
+          run: |
+            aws eks update-kubeconfig --name edge-eks --region us-east-2
+
+        - name: Deploy Staging
+          id: deploy
+          env:
+            ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+            ECR_REPOSITORY: ion-nutri
+            IMAGE_TAG_BACKEND: backend-${{ env.commit-hash }}-${{ env.timestamp }}
+            IMAGE_TAG_FRONTEND: frontend-${{ env.commit-hash }}-${{ env.timestamp }}
+          run: |
+            kubectl apply -f k8s/staging.yml
+            kubectl set image deployment/ion-nutri-staging-api api=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG_BACKEND
+            kubectl set image deployment/ion-nutri-staging-frontend frontend=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG_FRONTEND
+            kubectl rollout status deployment/ion-nutri-staging-api
+            kubectl rollout status deployment/ion-nutri-staging-frontend

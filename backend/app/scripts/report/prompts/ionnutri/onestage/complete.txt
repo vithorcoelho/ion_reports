@@ -1,0 +1,67 @@
+# IonNutri Complete Analysis Prompt (One-Stage)
+
+{{system_prompt}}
+
+## DADOS DO PACIENTE
+{{patient_data}}
+
+## DADOS METABÓLICOS
+{{metabolic_data}}
+
+## REGRAS DE FORMATAÇÃO
+{{formatting_rules}}
+
+## OBJETIVO
+Realize uma análise completa dos dados metabólicos do paciente em uma única avaliação abrangente cobrindo:
+- Achados metabólicos e deficiências nutricionais
+- Recomendações nutricionais personalizadas
+- Protocolo de suplementação
+- Mudanças de estilo de vida
+- Exames complementares
+- Resumo executivo
+
+### Análise de Achados Metabólicos
+- **Desequilíbrios Identificados**: [Principais desequilíbrios metabólicos]
+- **Impacto na Saúde**: [Como afeta a saúde geral do paciente]
+- **Fatores de Risco**: [Riscos metabólicos identificados]
+- **Indicadores Positivos**: [Aspectos metabólicos favoráveis]
+
+### Deficiências Nutricionais
+- **Deficiências Críticas**: [Deficiências que requerem atenção imediata]
+- **Justificativa Laboratorial**: [Baseado nos marcadores alterados]
+- **Correlação Clínica**: [Relação com sintomas e condições]
+
+### Recomendações Nutricionais
+- **Energéticos**: [Carboidratos e fontes de energia]
+- **Construtores**: [Proteínas e aminoácidos essenciais]
+- **Reguladores**: [Vitaminas e minerais]
+- **Gorduras**: [Gorduras essenciais e saudáveis]
+
+### Protocolo de Suplementação
+- **Suplementos Essenciais**: [Baseados nas deficiências críticas]
+- **Dosagem Terapêutica**: [Quantidades para correção]
+- **Timing e Interações**: [Como e quando tomar]
+
+### Mudanças de Estilo de Vida
+- **Sono e Ritmo Circadiano**: [Otimização do sono]
+- **Atividade Física**: [Exercícios adequados]
+- **Gerenciamento de Estresse**: [Técnicas de relaxamento]
+- **Hidratação**: [Quantidade e qualidade]
+
+### Exames Complementares
+- **Exames Prioritários**: [Baseados nos achados críticos]
+- **Monitoramento**: [Para acompanhar a evolução]
+- **Timeline**: [Quando realizar cada exame]
+
+### Resumo Executivo
+- **Principais Achados**: [Síntese dos achados mais relevantes]
+- **Estratégia de Intervenção**: [Abordagem geral recomendada]
+- **Expectativas de Melhoria**: [Melhorias esperadas]
+- **Próximos Passos**: [Ações imediatas prioritárias]
+
+## Diretrizes
+- PRIORIZE os achados do knowledge graph
+- Baseie nas deficiências identificadas
+- Considere preferências e restrições do paciente
+- Seja objetivo e prático
+- Mantenha tom clínico profissional

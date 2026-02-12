@@ -1,0 +1,187 @@
+{
+  "exam_data": [
+    {
+      "patient_id": "BF000010",
+      "exam_date": "2025-08-14T00:00:00Z",
+      "metabolites": [
+        {
+          "name": "ACETIL-L-CARNITINA",
+          "value": 0.780,
+          "unit": "μM"
+        },
+        {
+          "name": "ADENOSINA",
+          "value": 0.701,
+          "unit": "μM"
+        },
+        {
+          "name": "L-CARNITINA",
+          "value": 0.541,
+          "unit": "μM"
+        },
+        {
+          "name": "GLUTAMINA",
+          "value": 21.700,
+          "unit": "μM"
+        },
+        {
+          "name": "ISOLEUCINA",
+          "value": 1.000,
+          "unit": "μM"
+        },
+        {
+          "name": "LACTATO",
+          "value": 126.000,
+          "unit": "μM"
+        },
+        {
+          "name": "LEUCINA",
+          "value": 12.900,
+          "unit": "μM"
+        },
+        {
+          "name": "PIRUVATO",
+          "value": 17.200,
+          "unit": "μM"
+        },
+        {
+          "name": "TMAO [Trimetilamina N-Óxido]",
+          "value": 0.045,
+          "unit": "μM"
+        },
+        {
+          "name": "VALINA",
+          "value": 5.950,
+          "unit": "μM"
+        },
+        {
+          "name": "PROPIONIL-L-CARNITINA",
+          "value": 0.031,
+          "unit": "μM"
+        }
+      ]
+    },
+    {
+      "patient_id": "BF000012",
+      "exam_date": "2025-08-14T00:00:00Z",
+      "metabolites": [
+        {
+          "name": "ACETIL-L-CARNITINA",
+          "value": 0.564,
+          "unit": "μM"
+        },
+        {
+          "name": "ADENOSINA",
+          "value": 0.017,
+          "unit": "μM"
+        },
+        {
+          "name": "L-CARNITINA",
+          "value": 0.376,
+          "unit": "μM"
+        },
+        {
+          "name": "GLUTAMINA",
+          "value": 3.670,
+          "unit": "μM"
+        },
+        {
+          "name": "ISOLEUCINA",
+          "value": 1.000,
+          "unit": "μM"
+        },
+        {
+          "name": "LACTATO",
+          "value": 82.900,
+          "unit": "μM"
+        },
+        {
+          "name": "LEUCINA",
+          "value": 4.250,
+          "unit": "μM"
+        },
+        {
+          "name": "PIRUVATO",
+          "value": 0.001,
+          "unit": "μM"
+        },
+        {
+          "name": "TMAO [Trimetilamina N-Óxido]",
+          "value": 0.051,
+          "unit": "μM"
+        },
+        {
+          "name": "VALINA",
+          "value": 3.180,
+          "unit": "μM"
+        },
+        {
+          "name": "PROPIONIL-L-CARNITINA",
+          "value": 0.036,
+          "unit": "μM"
+        }
+      ]
+    },
+    {
+      "patient_id": "BF000011",
+      "exam_date": "2025-08-14T00:00:00Z",
+      "metabolites": [
+        {
+          "name": "ACETIL-L-CARNITINA",
+          "value": 0.314,
+          "unit": "μM"
+        },
+        {
+          "name": "ADENOSINA",
+          "value": 0.618,
+          "unit": "μM"
+        },
+        {
+          "name": "L-CARNITINA",
+          "value": 0.986,
+          "unit": "μM"
+        },
+        {
+          "name": "GLUTAMINA",
+          "value": 35.800,
+          "unit": "μM"
+        },
+        {
+          "name": "ISOLEUCINA",
+          "value": 1.000,
+          "unit": "μM"
+        },
+        {
+          "name": "LACTATO",
+          "value": 149.000,
+          "unit": "μM"
+        },
+        {
+          "name": "LEUCINA",
+          "value": 45.900,
+          "unit": "μM"
+        },
+        {
+          "name": "PIRUVATO",
+          "value": 0.001,
+          "unit": "μM"
+        },
+        {
+          "name": "TMAO [Trimetilamina N-Óxido]",
+          "value": 0.051,
+          "unit": "μM"
+        },
+        {
+          "name": "VALINA",
+          "value": 31.400,
+          "unit": "μM"
+        },
+        {
+          "name": "PROPIONIL-L-CARNITINA",
+          "value": 0.026,
+          "unit": "μM"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+# IonNutri Additional Exams Prompt (Multistage)
+
+{{system_prompt}}
+
+## DADOS DO PACIENTE
+{{patient_data}}
+
+## DADOS METABÓLICOS
+{{metabolic_data}}
+
+## CONTEXTO ADICIONAL (RELATÓRIO ESTRUTURADO)
+{{previous_sections}}
+
+## RESULTADOS DOS ACHADOS
+{{findings_result}}
+
+## RESULTADOS DAS DEFICIÊNCIAS
+{{deficiencies_result}}
+
+## RESULTADOS DA NUTRIÇÃO
+{{nutrition_result}}
+
+## RESULTADOS DA SUPLEMENTAÇÃO
+{{supplements_result}}
+
+## RESULTADOS DO ESTILO DE VIDA
+{{lifestyle_result}}
+
+## OBJETIVO
+Liste exames complementares recomendados e justifique cada um.

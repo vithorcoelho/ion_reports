@@ -1,0 +1,48 @@
+# Development overrides for docker-compose.yml
+# This file is automatically loaded by Docker Compose for local development
+
+services:
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      args:
+        - BUILD_TIME=${BUILD_TIME:-}
+        - GIT_COMMIT=${GIT_COMMIT:-}
+        - GIT_BRANCH=${GIT_BRANCH:-}
+        - BUILD_NUMBER=${BUILD_NUMBER:-local}
+        - ENVIRONMENT=${ENVIRONMENT:-development}
+
+    environment:
+      # Override with development-specific settings
+      - ENVIRONMENT=development
+      - DEBUG=true
+      - LOG_LEVEL=DEBUG
+
+      # Add build info environment variables
+      - BUILD_TIME=${BUILD_TIME:-}
+      - GIT_COMMIT=${GIT_COMMIT:-}
+      - GIT_BRANCH=${GIT_BRANCH:-}
+      - BUILD_NUMBER=${BUILD_NUMBER:-local}
+
+      # Neo4j settings (for the application to connect)
+      - NEO4J_URI=bolt://ion-nutri-neo4j:7687
+      - NEO4J_USER=neo4j
+      - NEO4J_PASSWORD=password
+
+      # LLM settings
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - OPENROUTER_API_BASE=${OPENROUTER_API_BASE}
+      - OPENROUTER_MODEL=${OPENROUTER_MODEL}
+      - OPENROUTER_MAX_TOKENS=${OPENROUTER_MAX_TOKENS}
+      - OPENROUTER_TEMPERATURE=${OPENROUTER_TEMPERATURE}
+      - OPENROUTER_MODEL_NAME=${OPENROUTER_MODEL_NAME}
+
+      # Feature Flags
+      - FEATURE_USE_STRATEGY_PATTERN
+
+    # Development-specific volumes for hot reload
+    volumes:
+      - ./backend/app:/app/app:ro
+      - ./logs:/app/logs
+      - ./backend/app/artifacts:/app/app/artifacts

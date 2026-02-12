@@ -1,0 +1,17 @@
+{
+  "name": "ion-nutri-presentation",
+  "private": true,
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.42.1",
+    "@slidev/theme-default": "^0.21.2",
+    "@slidev/theme-seriph": "^0.21.3"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.52.0"
+  }
+}

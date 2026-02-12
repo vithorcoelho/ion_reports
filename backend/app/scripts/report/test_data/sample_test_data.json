@@ -1,0 +1,17 @@
+[
+  {
+    "inputs": "Patient: 45-year-old female with fatigue, weakness, and hair loss. Exam shows low iron (35 μg/dL), low vitamin D (15 ng/mL), and elevated cortisol (28 μg/dL). BMI: 22.5, no chronic diseases.",
+    "targets": "Findings: Iron deficiency anemia and vitamin D deficiency with elevated cortisol levels indicating stress response. Deficiencies: Iron deficiency (35 μg/dL, normal >60), Vitamin D deficiency (15 ng/mL, normal >30). Nutrition: Increase iron-rich foods (red meat, spinach), vitamin D sources (fatty fish, fortified dairy). Supplements: Iron bisglycinate 28mg daily, Vitamin D3 2000 IU daily. Lifestyle: Stress management techniques, adequate sleep. Exams: Repeat iron panel in 6 weeks, vitamin D in 3 months.",
+    "context": "Clinical case of nutritional deficiencies with stress component"
+  },
+  {
+    "inputs": "Patient: 28-year-old male athlete with muscle cramps, poor recovery, and sleep disturbances. Exam shows low magnesium (1.4 mg/dL), low zinc (65 μg/dL), and high creatine kinase (450 U/L). Training 6x/week, high intensity.",
+    "targets": "Findings: Athletic performance compromised by magnesium and zinc deficiencies with muscle damage indicators. Deficiencies: Magnesium deficiency (1.4 mg/dL, normal >1.8), Zinc deficiency (65 μg/dL, normal >70). Nutrition: Increase magnesium-rich foods (nuts, seeds, dark chocolate), zinc sources (oysters, beef, pumpkin seeds). Supplements: Magnesium glycinate 400mg daily, Zinc picolinate 15mg daily. Lifestyle: Optimize recovery protocols, reduce training intensity temporarily. Exams: Monitor CK levels, repeat minerals in 4 weeks.",
+    "context": "Athletic performance optimization case with mineral deficiencies"
+  },
+  {
+    "inputs": "Patient: 62-year-old male with memory issues, mood changes, and joint pain. Exam shows low B12 (180 pg/mL), low folate (3.2 ng/mL), and elevated homocysteine (18 μmol/L). History of gastric bypass 5 years ago.",
+    "targets": "Findings: B-vitamin deficiencies with elevated homocysteine indicating increased cardiovascular risk and cognitive impact. Deficiencies: B12 deficiency (180 pg/mL, normal >300), Folate deficiency (3.2 ng/mL, normal >4.0). Nutrition: Increase B12-rich foods (animal products), folate sources (leafy greens, legumes). Supplements: B12 methylcobalamin 1000mcg sublingual daily, Folate 5-MTHF 1000mcg daily. Lifestyle: Cognitive exercises, joint mobility work. Exams: Monitor homocysteine levels, repeat B-vitamins in 8 weeks.",
+    "context": "Post-surgical nutritional deficiency with cognitive and cardiovascular implications"
+  }
+]

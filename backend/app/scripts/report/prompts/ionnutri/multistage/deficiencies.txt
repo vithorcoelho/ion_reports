@@ -1,0 +1,15 @@
+# IonNutri Deficiencies Analysis Prompt (Multistage)
+
+{{system_prompt}}
+
+## DADOS DO PACIENTE
+{{patient_data}}
+
+## DADOS METABÓLICOS
+{{metabolic_data}}
+
+## RESULTADOS DOS ACHADOS
+{{findings_result}}
+
+## OBJETIVO
+Liste e explique as deficiências nutricionais identificadas, correlacionando com os achados laboratoriais.

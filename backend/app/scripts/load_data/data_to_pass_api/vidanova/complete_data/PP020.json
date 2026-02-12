@@ -1,0 +1,106 @@
+{
+  "exam_data": {
+    "patient_id": "PP020",
+    "exam_date": "2025-08-14T00:00:00Z",
+    "metabolites": [
+      {
+        "name": "ACETIL-L-CARNITINA",
+        "value": 0.564
+      },
+      {
+        "name": "ADENOSINA",
+        "value": 0.017
+      },
+      {
+        "name": "L-CARNITINA",
+        "value": 0.376
+      },
+      {
+        "name": "GLUTAMINA",
+        "value": 3.670
+      },
+      {
+        "name": "ISOLEUCINA",
+        "value": 1.000
+      },
+      {
+        "name": "LACTATO",
+        "value": 82.900
+      },
+      {
+        "name": "LEUCINA",
+        "value": 4.250
+      },
+      {
+        "name": "PIRUVATO",
+        "value": 0.001
+      },
+      {
+        "name": "TMAO [Trimetilamina N-Óxido]",
+        "value": 0.051
+      },
+      {
+        "name": "VALINA",
+        "value": 3.180
+      },
+      {
+        "name": "PROPIONIL-L-CARNITINA",
+        "value": 0.036
+      }
+    ]
+  },
+  "anamnesis": {
+    "anamnesis_type": "vidanova",
+    "patient_id": "PP020",
+    "objective": "Melhora da composição corporal e ganho de massa muscular",
+    "personal_data": {
+      "age": 27,
+      "birth_date": "1998-01-01",
+      "age_detail": "27 anos",
+      "gender": "masculino",
+      "weight": 60,
+      "height": 1.7,
+      "bmi": 20.76
+    },
+    "context_factors": {
+      "medical_history": ["não informado"],
+      "intolerances": [],
+      "physical_activity": {
+        "frequency": "não informado",
+        "type": "não informado",
+        "intensity": "não informado"
+      },
+      "sleep": {
+        "quality": "não informado",
+        "hours": 7,
+        "issues": ["não informado"]
+      },
+      "alcohol_consumption": {
+        "frequency": "não informado",
+        "amount": "não informado"
+      },
+      "medications": [],
+      "stress_level": "não informado"
+    },
+    "diet_type": "Como de tudo, sem restrições específicas (onívora)",
+    "energy_level": "Depende da semana, difícil dizer",
+    "muscle_gain_goal": "Ganho de massa muscular",
+    "nutritionist_plan": "Nunca fiz acompanhamento nutricional",
+    "difficulty_muscle_gain": "Um pouco, mas consigo evoluir",
+    "surgeries": ["não informado"],
+    "menopause_age": "não aplicável",
+    "tobacco_use": {
+      "uses_or_used": "não informado",
+      "frequency": "não informado"
+    },
+    "food_allergies": {
+      "has_allergy": "não informado",
+      "allergy_items": []
+    },
+    "food_avoidance": {
+      "avoids_food": "não informado",
+      "food_items": []
+    },
+    "supplements": []
+  }
+}

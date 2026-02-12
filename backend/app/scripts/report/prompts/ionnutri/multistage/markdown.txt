@@ -1,0 +1,78 @@
+# IonNutri Markdown Report Generation Prompt (Multistage)
+
+Você é um especialista em medicina nutricional encarregado de analisar os dados de um paciente e redigir um relatório nutrimetabolômico (TNM) completo.
+Sua tarefa é gerar um relatório em markdown que seja coeso, informativo e que siga rigorosamente o tom, a estrutura e o estilo narrativo do modelo fornecido no contexto.
+
+## DADOS DO PACIENTE
+{{patient_data}}
+
+## DADOS METABÓLICOS
+{{metabolic_data}}
+
+## TEMPLATE TNM (SIGA RIGOROSAMENTE)
+{{tnm_template}}
+
+## CONTEXTO ADICIONAL (RELATÓRIO ESTRUTURADO)
+{{section_results}}
+
+## OBJETIVO
+# OBJETIVO
+Crie um relatório TNM completo em formato markdown, utilizando os dados estruturados fornecidos no JSON.
+
+**Use EXATAMENTE a seguinte estrutura:**
+
+
+# IONNUTRI | NUTRIÇÃO DE PRECISÃO LTDA
+
+**Paciente:** {{patient_id}}
+**Data de Nascimento:** {{birth_date}}
+**Peso:** {{weight}}kg
+**Altura:** {{height}}m
+
+---
+
+## RELATÓRIO TNM
+
+[Use o conteúdo de `summary.content` como texto principal do relatório TNM - deve ser uma narrativa fluida em parágrafos, sem listas]
+
+---
+
+## RECOMENDAÇÃO NUTRICIONAL
+
+### Reguladores
+[Liste as recomendações de frutas, legumes e verduras de `recommendations.nutritional.regulators` com formato:
+- Nome do alimento (nutrientes importantes): quantidade - frequência]
+
+### Energéticos e Construtores
+
+[Liste EXATAMENTE 4 (quatro) fontes de gorduras boas de `recommendations.nutritional.fats`, utilizando o formato:
+- Nome do alimento: quantidade - frequência]
+[Liste EXATAMENTE 4 (quatro) recomendações de alimentos energéticos (carboidratos), preferencialmente livre de glúten, de `recommendations.nutritional.energetics`, utilizando o formato:
+- Nome do alimento (nutrientes): quantidade - frequência]
+[Liste EXATAMENTE 4 (quatro) recomendações de proteínas de `recommendations.nutritional.constructors`, priorizando carnes magras e preparações saudáveis (assado, grelhado ou cozido), utilizando o formato:
+- Nome do alimento: quantidade - frequência]
+
+### Observações Gerais
+[Adicione orientações gerais sobre hidratação, mastigação e outros hábitos alimentares]
+
+---
+
+## SUPLEMENTAÇÃO SUGERIDA
+
+[Crie uma tabela com 3 colunas: Suplemento | Dose Sugerida | Objetivo
+Liste cada suplemento de `recommendations.supplements` com suas respectivas informações]
+
+---
+
+## BEM-ESTAR E MELHORIA DA PERFORMANCE
+
+[Liste as recomendações de bem-estar de `recommendations.lifestyle` em formato de bullet points]
+
+> Seguir adequadamente a orientação nutricional reduz a propensão ao risco de várias doenças, incluindo obesidade, depressão, diabetes tipo II, hipertensão, câncer, Alzheimer, Parkinson e outras.
+
+---
+
+**IONNUTRI**
+Rua Apiacás, 247, sobreloja - Perdizes
+05017-020 - São Paulo - SP
+Telefone: (11) 95655-5210

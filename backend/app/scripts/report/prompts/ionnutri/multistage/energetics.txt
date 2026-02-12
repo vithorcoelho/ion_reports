@@ -1,0 +1,40 @@
+# IonNutri Energetics Recommendations Prompt (Multistage)
+
+{{system_prompt}}
+
+## DADOS DO PACIENTE
+{{patient_data}}
+
+## DADOS METABÓLICOS
+{{metabolic_data}}
+
+## CONTEXTO ADICIONAL (RELATÓRIO ESTRUTURADO)
+{{previous_sections}}
+
+## RESULTADOS DOS ACHADOS
+{{findings_result}}
+
+## RESULTADOS DAS DEFICIÊNCIAS
+{{deficiencies_result}}
+
+## OBJETIVO
+Sugira APENAS alimentos fontes de CARBOIDRATOS adequados ao perfil metabólico do paciente.
+
+**PRIORIDADE MÁXIMA:** Use EXCLUSIVAMENTE os alimentos recomendados pelo knowledge graph que sejam carboidratos.
+
+Exemplos de categorização de carboidratos (use APENAS como referência para identificar se um alimento do KG é carboidrato):
+- Tubérculos: batata doce, inhame, mandioquinha, cará, batata inglesa
+- Cereais integrais: arroz integral, quinoa, aveia
+- Farinhas e tapioca
+
+REGRAS IMPORTANTES:
+- NÃO liste alimentos que não estejam recomendados pelo knowledge graph
+- NÃO inclua proteínas (carnes, ovos, peixes, leguminosas)
+- NÃO inclua gorduras (oleaginosas, óleos, abacate)
+- NÃO inclua vegetais (esses vão na seção "Reguladores")
+- Liste entre 3-4 alimentos, priorizando os mais relevantes para o perfil do paciente
+
+Para cada alimento RECOMENDADO PELO KG, forneça:
+- Nome do alimento e nutrientes principais entre parênteses (se relevante)
+- Quantidade sugerida (em gramas ou medidas caseiras como "1 xícara", "1 unidade média")
+- Frequência recomendada (ex: "4-5x na semana", "diariamente")

@@ -1,0 +1,34 @@
+# VidaNova Summary Prompt (Multistage)
+
+{{system_prompt}}
+
+## DADOS DO PACIENTE
+{{patient_data}}
+
+## DADOS METABÓLICOS
+{{metabolic_data}}
+
+## CONTEXTO ADICIONAL (RELATÓRIO ESTRUTURADO)
+{{previous_sections}}
+
+## RESULTADOS DOS ACHADOS
+{{findings_result}}
+
+## RESULTADOS DA SUPLEMENTAÇÃO
+{{supplements_result}}
+
+## RESULTADOS DA DIETA
+{{diet_result}}
+
+## RESULTADOS DO TREINO
+{{training_result}}
+
+## OBJETIVO
+Crie um resumo em formato de prosa narrativa, dividido em 4 parágrafos:
+
+1) Visão geral com dados relevantes do perfil clínico, hábitos e contexto, utilizando tom impessoal (ex: "observa-se", "nota-se", "considerando-se").
+2) Interpretação sobre o laudo metabólico e achados principais, focando nas alterações identificadas e seus impactos, sem detalhar intervenções específicas.
+3) Diretrizes gerais de intervenção integrando alimentação, suplementação e treino de forma contextualizada, evitando detalhamentos que serão abordados em seções posteriores.
+4) Conclusão destacando o objetivo estabelecido e a importância da abordagem integrada para os resultados esperados.
+
+Mantenha tom impessoal e orientado ao leitor. Contextualize sempre o objetivo clínico identificado. Evite antecipar detalhes específicos de condutas que serão desenvolvidos nas próximas seções. Não use listas ou markdown; mantenha texto contínuo em parágrafos claros e bem estruturados.

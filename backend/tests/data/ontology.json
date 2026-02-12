@@ -1,0 +1,124 @@
+{
+    "metabolites": [
+      {
+        "id": "metabolito-1",
+        "name": "1-ESTEAROIL-LISOFOSFATIDILCOLINA [HDL]",
+        "definition": "O 1-estearoil-lisofosfatidilcolina (1-SLPC) é uma molécula que faz parte dos fosfolipídios...",
+        "measurement_unit": "mmol/L",
+        "reference_range_min": 0.8,
+        "reference_range_max": 1.2,
+        "food_sources": [
+          "Gema de ovo",
+          "Oleaginosas",
+          "Peixes"
+        ],
+        "metabolic_pathway": "via-1"
+      }
+    ],
+    "metabolic_pathways": [
+
+      {
+        "id": "via-1",
+        "name": "Imunometabolismo - Ricas em Ômega 9 e Ômega 3",
+        "definition": "O imunometabolismo envolve a forma como as células do sistema imunológico...",
+        "biological_function": "Regulação do metabolismo celular em células imunes",
+        "clinical_importance": "Regula respostas imunológicas e processos inflamatórios"
+      }
+    ],
+    "manifestations": [
+      {
+        "id": "manifestacao-baixo-1",
+        "description": "Comprometimento da função do HDL e do transporte reverso de colesterol",
+        "type": "LowLevel",
+        "physiological_mechanism": "Redução da eficiência na remoção de colesterol das células periféricas",
+        "severity": "Moderada",
+        "affected_system": "Cardiovascular",
+        "metabolite": "metabolito-1"
+      },
+      {
+        "id": "manifestacao-alto-1",
+        "description": "Aumento da ativação inflamatória sistêmica",
+        "type": "HighLevel",
+        "metabolite": "metabolito-1"
+      }
+    ],
+    "interventions": [
+      {
+        "id": "intervencao-baixo-1",
+        "type": "LowLevel",
+        "description": "Aumento do consumo de fontes de colina",
+        "recommended_duration": "3 meses",
+        "expected_results": "Melhora do perfil lipídico e função do HDL",
+        "contraindications": ["Histórico de câncer de próstata avançado"],
+        "priority": "high",
+        "manifestation": "manifestacao-baixo-1"
+      }
+    ],
+    "foods": [
+      {
+        "id": "alimento-1",
+        "name": "Gema de ovo",
+        "food_group": "Proteína Animal",
+        "main_nutrients": ["Colina", "Vitamina B12"],
+        "recommended_portion": "1 unidade",
+        "consumption_frequency": "3-4 vezes por semana",
+        "alternatives": ["Lecitina de soja"],
+        "allergenic_potential": true,
+        "intervention": ""
+      }
+    ],
+    "supplements": [
+      {
+        "id": "suplemento-1",
+        "name": "Ômega-3 (EPA/DHA)",
+        "active_composition": "Ácidos graxos poliinsaturados EPA e DHA",
+        "minimum_dosage": 1000,
+        "maximum_dosage": 3000,
+        "dosage_unit": "mg",
+        "administration_form": "Cápsulas",
+        "action_mechanism": "Anti-inflamatório e cardioprotetor",
+        "drug_interactions": ["Anticoagulantes", "Anti-plaquetários"],
+        "contraindications": ["Distúrbios de coagulação"],
+        "intervention": "intervencao-baixo-1"
+      }
+    ],
+    "contextual_factors": [
+      {
+        "id": "fator-1",
+        "name": "Composição corporal",
+        "category": "Indicador Antropométrico",
+        "metabolic_impact": "Alteração no metabolismo lipídico",
+        "anamnesis_source": "Avaliação antropométrica",
+        "clinical_relevance": "Alta",
+        "affected_metabolites": ["metabolito-1"]
+      }
+    ],
+    "metabolic_profiles": [
+      {
+        "id": "perfil-1",
+        "name": "Perfil Inflamatório Cardiovascular",
+        "description": "Padrão de desequilíbrios caracterizado por alterações em metabólitos relacionados ao metabolismo lipídico e inflamação sistêmica",
+        "general_therapeutic_approach": "Dieta anti-inflamatória com ênfase em ômega-3 e antioxidantes",
+        "severity": "Moderado",
+        "associated_pathways": ["via-1"],
+        "characteristic_metabolites": [
+          {"id": "metabolito-1", "importance": "primary"}
+        ]
+      }
+    ],
+    "scientific_evidence": [
+      {
+        "id": "evidencia-1",
+        "title": "The Fluid Aspect of the Mediterranean Diet...",
+        "authors": "Ditano-Vázquez, P., Torres-Peña, J. D., Galeano-Valle, F., et al.",
+        "publication": "Nutrients",
+        "volume": "11(11)",
+        "pages": "2833",
+        "year": "2019",
+        "doi": "https://doi.org/10.3390/nu11112833",
+        "study_type": "Revisão sistemática",
+        "evidence_level": "Alto",
+        "metabolite": "metabolito-1"
+      }
+    ]
+  }

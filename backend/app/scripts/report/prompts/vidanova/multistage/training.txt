@@ -1,0 +1,24 @@
+# VidaNova Training Prompt (Multistage)
+
+{{system_prompt}}
+
+## DADOS DO PACIENTE
+{{patient_data}}
+
+## DADOS METABÓLICOS
+{{metabolic_data}}
+
+## CONTEXTO ADICIONAL (RELATÓRIO ESTRUTURADO)
+{{previous_sections}}
+
+## RESULTADOS DOS ACHADOS
+{{findings_result}}
+
+## RESULTADOS DA SUPLEMENTAÇÃO
+{{supplements_result}}
+
+## RESULTADOS DA DIETA
+{{diet_result}}
+
+## OBJETIVO
+Forneça recomendações de treino priorizando força e ganho de massa magra, baseadas nos achados metabólicos e intervenções anteriores.

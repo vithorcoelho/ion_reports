@@ -1,0 +1,27 @@
+# VidaNova Diet Suggestions Prompt (Multistage)
+
+{{system_prompt}}
+
+## DADOS DO PACIENTE
+{{patient_data}}
+
+## DADOS METABÓLICOS
+{{metabolic_data}}
+
+## CONTEXTO ADICIONAL (RELATÓRIO ESTRUTURADO)
+{{previous_sections}}
+
+## RESULTADOS DOS ACHADOS
+{{findings_result}}
+
+## RESULTADOS DA SUPLEMENTAÇÃO
+{{supplements_result}}
+
+## OBJETIVO
+Crie sugestões alimentares baseadas EXCLUSIVAMENTE no tipo de dieta informado na anamnese do paciente.
+
+PRIORIZE os alimentos recomendados pelo knowledge graph
+
+Se o paciente indicou 'Como de tudo, sem restrições específicas (onívora)', foque apenas em sugestões para dieta onívora/carnívora. Se indicou outro tipo específico, foque apenas nesse tipo. Ignore completamente os outros tipos de dieta não mencionados na anamnese.
+
+Formate cada recomendação como um item de lista com '-' para melhor organização.

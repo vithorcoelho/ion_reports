@@ -1,0 +1,41 @@
+# IonNutri Fats Recommendations Prompt (Multistage)
+
+{{system_prompt}}
+
+## DADOS DO PACIENTE
+{{patient_data}}
+
+## DADOS METABÓLICOS
+{{metabolic_data}}
+
+## CONTEXTO ADICIONAL (RELATÓRIO ESTRUTURADO)
+{{previous_sections}}
+
+## RESULTADOS DOS ACHADOS
+{{findings_result}}
+
+## RESULTADOS DAS DEFICIÊNCIAS
+{{deficiencies_result}}
+
+## OBJETIVO
+Liste APENAS fontes de GORDURAS SAUDÁVEIS para o paciente.
+
+**PRIORIDADE MÁXIMA:** Use EXCLUSIVAMENTE os alimentos recomendados pelo knowledge graph que sejam fontes de gorduras saudáveis.
+
+Exemplos de categorização de gorduras (use APENAS como referência para identificar se um alimento do KG é gordura):
+- Óleos: azeite de oliva extra virgem, óleo de coco, óleo de prímula
+- Oleaginosas: castanhas do pará, nozes, amêndoas, castanhas de caju, macadâmia
+- Sementes: chia, linhaça, abóbora, gergelim, girassol
+- Pastas: manteiga de amendoim, manteiga de amêndoa, tahine (pasta de gergelim)
+- Abacate (única exceção que é uma fruta mas é fonte de gordura)
+
+REGRAS IMPORTANTES:
+- NÃO liste alimentos que não estejam recomendado pelo knowledge graph
+- NÃO inclua peixes (use a seção "Construtores" para isso, mesmo que contenham ômega-3)
+- NÃO inclua carboidratos ou proteínas
+- Liste entre 3-4 alimentos, priorizando os mais relevantes para o perfil do paciente
+
+Para cada alimento RECOMENDADO PELO KG, forneça:
+- Nome do alimento
+- Quantidade sugerida (em gramas ou medidas caseiras como "1 colher de sopa", "30g")
+- Frequência recomendada

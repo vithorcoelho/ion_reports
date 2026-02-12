@@ -1,0 +1,1238 @@
+{
+  "reference_ranges": [
+    {
+      "id": "range-metabolito-lisina",
+      "name": "Clinical interval for LISINA",
+      "unit": "μM",
+      "deficit_severo_min": 1.25,
+      "deficit_severo_max": 2.499,
+      "deficit_moderado_min": 2.5,
+      "deficit_moderado_max": 4.999,
+      "normal_min": 5.0,
+      "normal_max": 40.0,
+      "excesso_moderado_min": 40.001,
+      "excesso_moderado_max": 60.0,
+      "excesso_severo_min": 60.001,
+      "excesso_severo_max": 61.25
+    },
+    {
+      "id": "range-metabolito-1-esterearoil-2-araquidonoil-fosfatidilcolina",
+      "name": "Clinical interval for 1-ESTEREAROIL-2-ARAQUIDONOIL-FOSFATIDILCOLINA",
+      "unit": "μM",
+      "deficit_severo_min": 0.005,
+      "deficit_severo_max": 0.009,
+      "deficit_moderado_min": 0.01,
+      "deficit_moderado_max": 0.019,
+      "normal_min": 0.02,
+      "normal_max": 2.5,
+      "excesso_moderado_min": 2.501,
+      "excesso_moderado_max": 3.75,
+      "excesso_severo_min": 3.751,
+      "excesso_severo_max": 3.755
+    },
+    {
+      "id": "range-metabolito-1-estearoil-2-linoleoil-fosfatidilcolina",
+      "name": "Clinical interval for 1-ESTEAROIL-2-LINOLEOIL-FOSFATIDILCOLINA",
+      "unit": "μM",
+      "deficit_severo_min": 0.0025,
+      "deficit_severo_max": 0.004,
+      "deficit_moderado_min": 0.005,
+      "deficit_moderado_max": 0.009,
+      "normal_min": 0.01,
+      "normal_max": 2.0,
+      "excesso_moderado_min": 2.001,
+      "excesso_moderado_max": 3.0,
+      "excesso_severo_min": 3.001,
+      "excesso_severo_max": 3.0025
+    },
+    {
+      "id": "range-metabolito-1-estearoil-lisofosfatidilcolina-hdl",
+      "name": "Clinical interval for 1-ESTEAROIL-LISOFOSFATIDILCOLINA [HDL]",
+      "unit": "μM",
+      "deficit_severo_min": 0.0125,
+      "deficit_severo_max": 0.024,
+      "deficit_moderado_min": 0.025,
+      "deficit_moderado_max": 0.049,
+      "normal_min": 0.05,
+      "normal_max": 0.3,
+      "excesso_moderado_min": 0.301,
+      "excesso_moderado_max": 0.45,
+      "excesso_severo_min": 0.451,
+      "excesso_severo_max": 0.4625
+    },
+    {
+      "id": "range-metabolito-1-oleil-lisofosfatidilcolina-n9",
+      "name": "Clinical interval for 1-OLEIL-LISOFOSFATIDILCOLINA [N9]",
+      "unit": "μM",
+      "deficit_severo_min": 0.025,
+      "deficit_severo_max": 0.049,
+      "deficit_moderado_min": 0.05,
+      "deficit_moderado_max": 0.099,
+      "normal_min": 0.1,
+      "normal_max": 0.5,
+      "excesso_moderado_min": 0.501,
+      "excesso_moderado_max": 0.75,
+      "excesso_severo_min": 0.751,
+      "excesso_severo_max": 0.775
+    },
+    {
+      "id": "range-metabolito-1-oleoil-2-estearoil-fosfatidilcolina-9",
+      "name": "Clinical interval for 1-OLEOIL-2-ESTEAROIL-FOSFATIDILCOLINA [9]",
+      "unit": "μM",
+      "deficit_severo_min": 0.025,
+      "deficit_severo_max": 0.049,
+      "deficit_moderado_min": 0.05,
+      "deficit_moderado_max": 0.099,
+      "normal_min": 0.1,
+      "normal_max": 3.5,
+      "excesso_moderado_min": 3.501,
+      "excesso_moderado_max": 5.25,
+      "excesso_severo_min": 5.251,
+      "excesso_severo_max": 5.275
+    },
+    {
+      "id": "range-metabolito-1-palmitoil-2-araquidonoil-fosfatidilcolina-ldl-ox",
+      "name": "Clinical interval for 1-PALMITOIL-2-ARAQUIDONOIL-FOSFATIDILCOLINA [LDL OX.]",
+      "unit": "μM",
+      "deficit_severo_min": 0.00825,
+      "deficit_severo_max": 0.0155,
+      "deficit_moderado_min": 0.0165,
+      "deficit_moderado_max": 0.032,
+      "normal_min": 0.033,
+      "normal_max": 0.2,
+      "excesso_moderado_min": 0.201,
+      "excesso_moderado_max": 0.3,
+      "excesso_severo_min": 0.301,
+      "excesso_severo_max": 0.30825
+    },
+    {
+      "id": "range-metabolito-1-palmitoil-2-docosaexenoil-fosfatidilcolina-3",
+      "name": "Clinical interval for 1-PALMITOIL-2-DOCOSAEXENOIL-FOSFATIDILCOLINA [3]",
+      "unit": "μM",
+      "deficit_severo_min": 0.0025,
+      "deficit_severo_max": 0.004,
+      "deficit_moderado_min": 0.005,
+      "deficit_moderado_max": 0.009,
+      "normal_min": 0.01,
+      "normal_max": 0.05,
+      "excesso_moderado_min": 0.051,
+      "excesso_moderado_max": 0.075,
+      "excesso_severo_min": 0.076,
+      "excesso_severo_max": 0.0775
+    },
+    {
+      "id": "range-metabolito-1-palmitoil-2-linoleoil-fosfatidilcolina",
+      "name": "Clinical interval for 1-PALMITOIL-2-LINOLEOIL-FOSFATIDILCOLINA",
+      "unit": "μM",
+      "deficit_severo_min": 0.0225,
+      "deficit_severo_max": 0.044,
+      "deficit_moderado_min": 0.045,
+      "deficit_moderado_max": 0.089,
+      "normal_min": 0.09,
+      "normal_max": 3.0,
+      "excesso_moderado_min": 3.001,
+      "excesso_moderado_max": 4.5,
+      "excesso_severo_min": 4.501,
+      "excesso_severo_max": 4.5225
+    },
+    {
+      "id": "range-metabolito-4-hidroxiprolina",
+      "name": "Clinical interval for 4- Hidroxiprolina",
+      "unit": "μM",
+      "deficit_severo_min": 0.05,
+      "deficit_severo_max": 0.099,
+      "deficit_moderado_min": 0.1,
+      "deficit_moderado_max": 0.199,
+      "normal_min": 0.2,
+      "normal_max": 3.0,
+      "excesso_moderado_min": 3.001,
+      "excesso_moderado_max": 4.5,
+      "excesso_severo_min": 4.501,
+      "excesso_severo_max": 4.55
+    },
+    {
+      "id": "range-metabolito-acetil-l-carnitina",
+      "name": "Clinical interval for ACETIL-L-CARNITINA",
+      "unit": "μM",
+      "deficit_severo_min": 0.125,
+      "deficit_severo_max": 0.249,
+      "deficit_moderado_min": 0.25,
+      "deficit_moderado_max": 0.499,
+      "normal_min": 0.5,
+      "normal_max": 1.5,
+      "excesso_moderado_min": 1.501,
+      "excesso_moderado_max": 2.25,
+      "excesso_severo_min": 2.251,
+      "excesso_severo_max": 2.375
+    },
+    {
+      "id": "range-metabolito-acido-urico",
+      "name": "Clinical interval for ÁCIDO ÚRICO",
+      "unit": "μM",
+      "deficit_severo_min": 25.0,
+      "deficit_severo_max": 49.999,
+      "deficit_moderado_min": 50.0,
+      "deficit_moderado_max": 99.999,
+      "normal_min": 100.0,
+      "normal_max": 300.0,
+      "excesso_moderado_min": 300.001,
+      "excesso_moderado_max": 450.0,
+      "excesso_severo_min": 450.001,
+      "excesso_severo_max": 475.0
+    },
+    {
+      "id": "range-metabolito-adenosina",
+      "name": "Clinical interval for ADENOSINA",
+      "unit": "μM",
+      "deficit_severo_min": 0.095,
+      "deficit_severo_max": 0.189,
+      "deficit_moderado_min": 0.19,
+      "deficit_moderado_max": 0.379,
+      "normal_min": 0.38,
+      "normal_max": 0.6,
+      "excesso_moderado_min": 0.601,
+      "excesso_moderado_max": 0.9,
+      "excesso_severo_min": 0.901,
+      "excesso_severo_max": 0.995
+    },
+    {
+      "id": "range-metabolito-dimetilarginina-assimetrica-adma",
+      "name": "Clinical interval for Dimetilarginina Assimétrica [ADMA]",
+      "unit": "μM",
+      "deficit_severo_min": 0.125,
+      "deficit_severo_max": 0.249,
+      "deficit_moderado_min": 0.25,
+      "deficit_moderado_max": 0.499,
+      "normal_min": 0.5,
+      "normal_max": 2.0,
+      "excesso_moderado_min": 2.001,
+      "excesso_moderado_max": 3.0,
+      "excesso_severo_min": 3.001,
+      "excesso_severo_max": 3.125
+    },
+    {
+      "id": "range-metabolito-alanina",
+      "name": "Clinical interval for ALANINA",
+      "unit": "μM",
+      "deficit_severo_min": 2.0,
+      "deficit_severo_max": 3.999,
+      "deficit_moderado_min": 4.0,
+      "deficit_moderado_max": 7.999,
+      "normal_min": 8.0,
+      "normal_max": 40.0,
+      "excesso_moderado_min": 40.001,
+      "excesso_moderado_max": 60.0,
+      "excesso_severo_min": 60.001,
+      "excesso_severo_max": 62.0
+    },
+    {
+      "id": "range-metabolito-alfa-cetoglutarato",
+      "name": "Clinical interval for ALFA-CETOGLUTARATO",
+      "unit": "μM",
+      "deficit_severo_min": 0.25,
+      "deficit_severo_max": 0.499,
+      "deficit_moderado_min": 0.5,
+      "deficit_moderado_max": 0.999,
+      "normal_min": 1.0,
+      "normal_max": 10.0,
+      "excesso_moderado_min": 10.001,
+      "excesso_moderado_max": 15.0,
+      "excesso_severo_min": 15.001,
+      "excesso_severo_max": 15.25
+    },
+    {
+      "id": "range-metabolito-arginina",
+      "name": "Clinical interval for ARGININA",
+      "unit": "μM",
+      "deficit_severo_min": 1.0,
+      "deficit_severo_max": 1.999,
+      "deficit_moderado_min": 2.0,
+      "deficit_moderado_max": 3.999,
+      "normal_min": 4.0,
+      "normal_max": 15.0,
+      "excesso_moderado_min": 15.001,
+      "excesso_moderado_max": 22.5,
+      "excesso_severo_min": 22.501,
+      "excesso_severo_max": 23.5
+    },
+    {
+      "id": "range-metabolito-asparagina",
+      "name": "Clinical interval for ASPARAGINA",
+      "unit": "μM",
+      "deficit_severo_min": 0.125,
+      "deficit_severo_max": 0.249,
+      "deficit_moderado_min": 0.25,
+      "deficit_moderado_max": 0.499,
+      "normal_min": 0.5,
+      "normal_max": 3.0,
+      "excesso_moderado_min": 3.001,
+      "excesso_moderado_max": 4.5,
+      "excesso_severo_min": 4.501,
+      "excesso_severo_max": 4.625
+    },
+    {
+      "id": "range-metabolito-aspartato",
+      "name": "Clinical interval for ASPARTATO",
+      "unit": "μM",
+      "deficit_severo_min": 0.125,
+      "deficit_severo_max": 0.249,
+      "deficit_moderado_min": 0.25,
+      "deficit_moderado_max": 0.499,
+      "normal_min": 0.5,
+      "normal_max": 25.0,
+      "excesso_moderado_min": 25.001,
+      "excesso_moderado_max": 37.5,
+      "excesso_severo_min": 37.501,
+      "excesso_severo_max": 37.625
+    },
+    {
+      "id": "range-metabolito-butiril-l-carnitina",
+      "name": "Clinical interval for BUTIRIL-L-CARNITINA",
+      "unit": "μM",
+      "deficit_severo_min": 0.0175,
+      "deficit_severo_max": 0.034,
+      "deficit_moderado_min": 0.035,
+      "deficit_moderado_max": 0.069,
+      "normal_min": 0.07,
+      "normal_max": 0.1,
+      "excesso_moderado_min": 0.101,
+      "excesso_moderado_max": 0.15,
+      "excesso_severo_min": 0.151,
+      "excesso_severo_max": 0.1675
+    },
+    {
+      "id": "range-metabolito-cisteina",
+      "name": "Clinical interval for CISTEÍNA",
+      "unit": "μM",
+      "deficit_severo_min": 0.01,
+      "deficit_severo_max": 0.019,
+      "deficit_moderado_min": 0.02,
+      "deficit_moderado_max": 0.039,
+      "normal_min": 0.04,
+      "normal_max": 2.0,
+      "excesso_moderado_min": 2.001,
+      "excesso_moderado_max": 3.0,
+      "excesso_severo_min": 3.001,
+      "excesso_severo_max": 3.01
+    },
+    {
+      "id": "range-metabolito-cistina",
+      "name": "Clinical interval for CISTINA",
+      "unit": "μM",
+      "deficit_severo_min": 0.001,
+      "deficit_severo_max": 0.001,
+      "deficit_moderado_min": 0.002,
+      "deficit_moderado_max": 0.003,
+      "normal_min": 0.004,
+      "normal_max": 2.0,
+      "excesso_moderado_min": 2.001,
+      "excesso_moderado_max": 3.0,
+      "excesso_severo_min": 3.001,
+      "excesso_severo_max": 3.001
+    },
+    {
+      "id": "range-metabolito-citrulina",
+      "name": "Clinical interval for CITRULINA",
+      "unit": "μM",
+      "deficit_severo_min": 0.5,
+      "deficit_severo_max": 0.999,
+      "deficit_moderado_min": 1.0,
+      "deficit_moderado_max": 1.999,
+      "normal_min": 2.0,
+      "normal_max": 20.0,
+      "excesso_moderado_min": 20.001,
+      "excesso_moderado_max": 30.0,
+      "excesso_severo_min": 30.001,
+      "excesso_severo_max": 30.5
+    },
+    {
+      "id": "range-metabolito-fenilalanina",
+      "name": "Clinical interval for FENILALANINA",
+      "unit": "μM",
+      "deficit_severo_min": 1.25,
+      "deficit_severo_max": 2.499,
+      "deficit_moderado_min": 2.5,
+      "deficit_moderado_max": 4.999,
+      "normal_min": 5.0,
+      "normal_max": 40.0,
+      "excesso_moderado_min": 40.001,
+      "excesso_moderado_max": 60.0,
+      "excesso_severo_min": 60.001,
+      "excesso_severo_max": 61.25
+    },
+    {
+      "id": "range-metabolito-gaba",
+      "name": "Clinical interval for GABA",
+      "unit": "μM",
+      "deficit_severo_min": 0.125,
+      "deficit_severo_max": 0.249,
+      "deficit_moderado_min": 0.25,
+      "deficit_moderado_max": 0.499,
+      "normal_min": 0.5,
+      "normal_max": 2.0,
+      "excesso_moderado_min": 2.001,
+      "excesso_moderado_max": 3.0,
+      "excesso_severo_min": 3.001,
+      "excesso_severo_max": 3.125
+    },
+    {
+      "id": "range-metabolito-glicina",
+      "name": "Clinical interval for GLICINA",
+      "unit": "μM",
+      "deficit_severo_min": 1.25,
+      "deficit_severo_max": 2.499,
+      "deficit_moderado_min": 2.5,
+      "deficit_moderado_max": 4.999,
+      "normal_min": 5.0,
+      "normal_max": 100.0,
+      "excesso_moderado_min": 100.001,
+      "excesso_moderado_max": 150.0,
+      "excesso_severo_min": 150.001,
+      "excesso_severo_max": 151.25
+    },
+    {
+      "id": "range-metabolito-glutamato",
+      "name": "Clinical interval for GLUTAMATO",
+      "unit": "μM",
+      "deficit_severo_min": 1.25,
+      "deficit_severo_max": 2.499,
+      "deficit_moderado_min": 2.5,
+      "deficit_moderado_max": 4.999,
+      "normal_min": 5.0,
+      "normal_max": 25.0,
+      "excesso_moderado_min": 25.001,
+      "excesso_moderado_max": 37.5,
+      "excesso_severo_min": 37.501,
+      "excesso_severo_max": 38.75
+    },
+    {
+      "id": "range-metabolito-glutamina",
+      "name": "Clinical interval for GLUTAMINA",
+      "unit": "μM",
+      "deficit_severo_min": 1.5,
+      "deficit_severo_max": 2.999,
+      "deficit_moderado_min": 3.0,
+      "deficit_moderado_max": 5.999,
+      "normal_min": 6.0,
+      "normal_max": 50.0,
+      "excesso_moderado_min": 50.001,
+      "excesso_moderado_max": 75.0,
+      "excesso_severo_min": 75.001,
+      "excesso_severo_max": 76.5
+    },
+    {
+      "id": "range-metabolito-glutationa-oxidada-gssg",
+      "name": "Clinical interval for GLUTATIONA OXIDADA (GSSG)",
+      "unit": "μM",
+      "deficit_severo_min": 0.025,
+      "deficit_severo_max": 0.049,
+      "deficit_moderado_min": 0.05,
+      "deficit_moderado_max": 0.099,
+      "normal_min": 0.1,
+      "normal_max": 1.4,
+      "excesso_moderado_min": 1.401,
+      "excesso_moderado_max": 2.1,
+      "excesso_severo_min": 2.101,
+      "excesso_severo_max": 2.125
+    },
+    {
+      "id": "range-metabolito-glutationa-reduzida-gsh",
+      "name": "Clinical interval for GLUTATIONA REDUZIDA (GSH)",
+      "unit": "μM",
+      "deficit_severo_min": 0.2375,
+      "deficit_severo_max": 0.474,
+      "deficit_moderado_min": 0.475,
+      "deficit_moderado_max": 0.949,
+      "normal_min": 0.95,
+      "normal_max": 1.7,
+      "excesso_moderado_min": 1.701,
+      "excesso_moderado_max": 2.55,
+      "excesso_severo_min": 2.551,
+      "excesso_severo_max": 2.7875
+    },
+    {
+      "id": "range-metabolito-glutationa-total",
+      "name": "Clinical interval for GLUTATIONA TOTAL",
+      "unit": "μM",
+      "deficit_severo_min": 0.2625,
+      "deficit_severo_max": 0.524,
+      "deficit_moderado_min": 0.525,
+      "deficit_moderado_max": 1.049,
+      "normal_min": 1.05,
+      "normal_max": 3.1,
+      "excesso_moderado_min": 3.101,
+      "excesso_moderado_max": 4.65,
+      "excesso_severo_min": 4.651,
+      "excesso_severo_max": 4.9125
+    },
+    {
+      "id": "range-metabolito-guanosina",
+      "name": "Clinical interval for GUANOSINA",
+      "unit": "μM",
+      "deficit_severo_min": 0.01,
+      "deficit_severo_max": 0.019,
+      "deficit_moderado_min": 0.02,
+      "deficit_moderado_max": 0.039,
+      "normal_min": 0.04,
+      "normal_max": 0.6,
+      "excesso_moderado_min": 0.601,
+      "excesso_moderado_max": 0.9,
+      "excesso_severo_min": 0.901,
+      "excesso_severo_max": 0.91
+    },
+    {
+      "id": "range-metabolito-histidina",
+      "name": "Clinical interval for HISTIDINA",
+      "unit": "μM",
+      "deficit_severo_min": 0.5,
+      "deficit_severo_max": 0.999,
+      "deficit_moderado_min": 1.0,
+      "deficit_moderado_max": 1.999,
+      "normal_min": 2.0,
+      "normal_max": 20.0,
+      "excesso_moderado_min": 20.001,
+      "excesso_moderado_max": 30.0,
+      "excesso_severo_min": 30.001,
+      "excesso_severo_max": 30.5
+    },
+    {
+      "id": "range-metabolito-isoleucina",
+      "name": "Clinical interval for ISOLEUCINA",
+      "unit": "μM",
+      "deficit_severo_min": 0.5,
+      "deficit_severo_max": 0.999,
+      "deficit_moderado_min": 1.0,
+      "deficit_moderado_max": 1.999,
+      "normal_min": 2.0,
+      "normal_max": 10.0,
+      "excesso_moderado_min": 10.001,
+      "excesso_moderado_max": 15.0,
+      "excesso_severo_min": 15.001,
+      "excesso_severo_max": 15.5
+    },
+    {
+      "id": "range-metabolito-isovaleril-l-carnitina",
+      "name": "Clinical interval for ISOVALERIL-L-CARNITINA",
+      "unit": "μM",
+      "deficit_severo_min": 0.0075,
+      "deficit_severo_max": 0.014,
+      "deficit_moderado_min": 0.015,
+      "deficit_moderado_max": 0.029,
+      "normal_min": 0.03,
+      "normal_max": 0.1,
+      "excesso_moderado_min": 0.101,
+      "excesso_moderado_max": 0.15,
+      "excesso_severo_min": 0.151,
+      "excesso_severo_max": 0.1575
+    },
+    {
+      "id": "range-metabolito-l-carnitina",
+      "name": "Clinical interval for L-CARNITINA",
+      "unit": "μM",
+      "deficit_severo_min": 0.025,
+      "deficit_severo_max": 0.049,
+      "deficit_moderado_min": 0.05,
+      "deficit_moderado_max": 0.099,
+      "normal_min": 0.1,
+      "normal_max": 1.5,
+      "excesso_moderado_min": 1.501,
+      "excesso_moderado_max": 2.25,
+      "excesso_severo_min": 2.251,
+      "excesso_severo_max": 2.275
+    },
+    {
+      "id": "range-metabolito-lactato",
+      "name": "Clinical interval for LACTATO",
+      "unit": "μM",
+      "deficit_severo_min": 5.0,
+      "deficit_severo_max": 9.999,
+      "deficit_moderado_min": 10.0,
+      "deficit_moderado_max": 19.999,
+      "normal_min": 20.0,
+      "normal_max": 500.0,
+      "excesso_moderado_min": 500.001,
+      "excesso_moderado_max": 750.0,
+      "excesso_severo_min": 750.001,
+      "excesso_severo_max": 755.0
+    },
+    {
+      "id": "range-metabolito-leucina",
+      "name": "Clinical interval for LEUCINA",
+      "unit": "μM",
+      "deficit_severo_min": 1.0,
+      "deficit_severo_max": 1.999,
+      "deficit_moderado_min": 2.0,
+      "deficit_moderado_max": 3.999,
+      "normal_min": 4.0,
+      "normal_max": 15.0,
+      "excesso_moderado_min": 15.001,
+      "excesso_moderado_max": 22.5,
+      "excesso_severo_min": 22.501,
+      "excesso_severo_max": 23.5
+    },
+    {
+      "id": "range-metabolito-malato",
+      "name": "Clinical interval for MALATO",
+      "unit": "μM",
+      "deficit_severo_min": 0.25,
+      "deficit_severo_max": 0.499,
+      "deficit_moderado_min": 0.5,
+      "deficit_moderado_max": 0.999,
+      "normal_min": 1.0,
+      "normal_max": 10.0,
+      "excesso_moderado_min": 10.001,
+      "excesso_moderado_max": 15.0,
+      "excesso_severo_min": 15.001,
+      "excesso_severo_max": 15.25
+    },
+    {
+      "id": "range-metabolito-metionina",
+      "name": "Clinical interval for METIONINA",
+      "unit": "μM",
+      "deficit_severo_min": 0.025,
+      "deficit_severo_max": 0.049,
+      "deficit_moderado_min": 0.05,
+      "deficit_moderado_max": 0.099,
+      "normal_min": 0.1,
+      "normal_max": 14.0,
+      "excesso_moderado_min": 14.001,
+      "excesso_moderado_max": 21.0,
+      "excesso_severo_min": 21.001,
+      "excesso_severo_max": 21.025
+    },
+    {
+      "id": "range-metabolito-ornitina",
+      "name": "Clinical interval for ORNITINA",
+      "unit": "μM",
+      "deficit_severo_min": 0.5,
+      "deficit_severo_max": 0.999,
+      "deficit_moderado_min": 1.0,
+      "deficit_moderado_max": 1.999,
+      "normal_min": 2.0,
+      "normal_max": 30.0,
+      "excesso_moderado_min": 30.001,
+      "excesso_moderado_max": 45.0,
+      "excesso_severo_min": 45.001,
+      "excesso_severo_max": 45.5
+    },
+    {
+      "id": "range-metabolito-palmitoil-l-carnitina-c16",
+      "name": "Clinical interval for PALMITOIL-L-CARNITINA [C16]",
+      "unit": "μM",
+      "deficit_severo_min": 0.0025,
+      "deficit_severo_max": 0.004,
+      "deficit_moderado_min": 0.005,
+      "deficit_moderado_max": 0.009,
+      "normal_min": 0.01,
+      "normal_max": 0.05,
+      "excesso_moderado_min": 0.051,
+      "excesso_moderado_max": 0.075,
+      "excesso_severo_min": 0.076,
+      "excesso_severo_max": 0.0775
+    },
+    {
+      "id": "range-metabolito-piruvato",
+      "name": "Clinical interval for PIRUVATO",
+      "unit": "μM",
+      "deficit_severo_min": 2.5,
+      "deficit_severo_max": 4.999,
+      "deficit_moderado_min": 5.0,
+      "deficit_moderado_max": 9.999,
+      "normal_min": 10.0,
+      "normal_max": 120.0,
+      "excesso_moderado_min": 120.001,
+      "excesso_moderado_max": 180.0,
+      "excesso_severo_min": 180.001,
+      "excesso_severo_max": 182.5
+    },
+    {
+      "id": "range-metabolito-prolina",
+      "name": "Clinical interval for PROLINA",
+      "unit": "μM",
+      "deficit_severo_min": 0.5,
+      "deficit_severo_max": 0.999,
+      "deficit_moderado_min": 1.0,
+      "deficit_moderado_max": 1.999,
+      "normal_min": 2.0,
+      "normal_max": 100.0,
+      "excesso_moderado_min": 100.001,
+      "excesso_moderado_max": 150.0,
+      "excesso_severo_min": 150.001,
+      "excesso_severo_max": 150.5
+    },
+    {
+      "id": "range-metabolito-propionil-l-carnitina-c3",
+      "name": "Clinical interval for PROPIONIL-L-CARNITINA [C3]",
+      "unit": "μM",
+      "deficit_severo_min": 0.0025,
+      "deficit_severo_max": 0.004,
+      "deficit_moderado_min": 0.005,
+      "deficit_moderado_max": 0.009,
+      "normal_min": 0.01,
+      "normal_max": 0.1,
+      "excesso_moderado_min": 0.101,
+      "excesso_moderado_max": 0.15,
+      "excesso_severo_min": 0.151,
+      "excesso_severo_max": 0.1525
+    },
+    {
+      "id": "range-metabolito-quinurenina",
+      "name": "Clinical interval for QUINURENINA",
+      "unit": "μM",
+      "deficit_severo_min": 0.0005,
+      "deficit_severo_max": 0.0,
+      "deficit_moderado_min": 0.001,
+      "deficit_moderado_max": 0.001,
+      "normal_min": 0.002,
+      "normal_max": 0.09,
+      "excesso_moderado_min": 0.091,
+      "excesso_moderado_max": 0.135,
+      "excesso_severo_min": 0.136,
+      "excesso_severo_max": 0.1355
+    },
+    {
+      "id": "range-metabolito-serina",
+      "name": "Clinical interval for SERINA",
+      "unit": "μM",
+      "deficit_severo_min": 0.75,
+      "deficit_severo_max": 1.499,
+      "deficit_moderado_min": 1.5,
+      "deficit_moderado_max": 2.999,
+      "normal_min": 3.0,
+      "normal_max": 30.0,
+      "excesso_moderado_min": 30.001,
+      "excesso_moderado_max": 45.0,
+      "excesso_severo_min": 45.001,
+      "excesso_severo_max": 45.75
+    },
+    {
+      "id": "range-metabolito-succinato",
+      "name": "Clinical interval for SUCCINATO",
+      "unit": "μM",
+      "deficit_severo_min": 0.5,
+      "deficit_severo_max": 0.999,
+      "deficit_moderado_min": 1.0,
+      "deficit_moderado_max": 1.999,
+      "normal_min": 2.0,
+      "normal_max": 30.0,
+      "excesso_moderado_min": 30.001,
+      "excesso_moderado_max": 45.0,
+      "excesso_severo_min": 45.001,
+      "excesso_severo_max": 45.5
+    },
+    {
+      "id": "range-metabolito-taurina",
+      "name": "Clinical interval for TAURINA",
+      "unit": "μM",
+      "deficit_severo_min": 2.5,
+      "deficit_severo_max": 4.999,
+      "deficit_moderado_min": 5.0,
+      "deficit_moderado_max": 9.999,
+      "normal_min": 10.0,
+      "normal_max": 200.0,
+      "excesso_moderado_min": 200.001,
+      "excesso_moderado_max": 300.0,
+      "excesso_severo_min": 300.001,
+      "excesso_severo_max": 302.5
+    },
+    {
+      "id": "range-metabolito-tetradecanoil-l-carnitina",
+      "name": "Clinical interval for TETRADECANOIL-L-CARNITINA",
+      "unit": "μM",
+      "deficit_severo_min": 0.0025,
+      "deficit_severo_max": 0.004,
+      "deficit_moderado_min": 0.005,
+      "deficit_moderado_max": 0.009,
+      "normal_min": 0.01,
+      "normal_max": 0.11,
+      "excesso_moderado_min": 0.111,
+      "excesso_moderado_max": 0.165,
+      "excesso_severo_min": 0.166,
+      "excesso_severo_max": 0.1675
+    },
+    {
+      "id": "range-metabolito-timina",
+      "name": "Clinical interval for TIMINA",
+      "unit": "μM",
+      "deficit_severo_min": 0.175,
+      "deficit_severo_max": 0.349,
+      "deficit_moderado_min": 0.35,
+      "deficit_moderado_max": 0.699,
+      "normal_min": 0.7,
+      "normal_max": 10.0,
+      "excesso_moderado_min": 10.001,
+      "excesso_moderado_max": 15.0,
+      "excesso_severo_min": 15.001,
+      "excesso_severo_max": 15.175
+    },
+    {
+      "id": "range-metabolito-tirosina",
+      "name": "Clinical interval for TIROSINA",
+      "unit": "μM",
+      "deficit_severo_min": 0.25,
+      "deficit_severo_max": 0.499,
+      "deficit_moderado_min": 0.5,
+      "deficit_moderado_max": 0.999,
+      "normal_min": 1.0,
+      "normal_max": 30.0,
+      "excesso_moderado_min": 30.001,
+      "excesso_moderado_max": 45.0,
+      "excesso_severo_min": 45.001,
+      "excesso_severo_max": 45.25
+    },
+    {
+      "id": "range-metabolito-tmao-trimetilamina-n-oxido",
+      "name": "Clinical interval for TMAO [Trimetilamina N-Óxido]",
+      "unit": "μM",
+      "deficit_severo_min": 0.0025,
+      "deficit_severo_max": 0.004,
+      "deficit_moderado_min": 0.005,
+      "deficit_moderado_max": 0.009,
+      "normal_min": 0.01,
+      "normal_max": 0.5,
+      "excesso_moderado_min": 0.501,
+      "excesso_moderado_max": 0.75,
+      "excesso_severo_min": 0.751,
+      "excesso_severo_max": 0.7525
+    },
+    {
+      "id": "range-metabolito-treonina",
+      "name": "Clinical interval for TREONINA",
+      "unit": "μM",
+      "deficit_severo_min": 2.5,
+      "deficit_severo_max": 4.999,
+      "deficit_moderado_min": 5.0,
+      "deficit_moderado_max": 9.999,
+      "normal_min": 10.0,
+      "normal_max": 30.0,
+      "excesso_moderado_min": 30.001,
+      "excesso_moderado_max": 45.0,
+      "excesso_severo_min": 45.001,
+      "excesso_severo_max": 47.5
+    },
+    {
+      "id": "range-metabolito-triptofano",
+      "name": "Clinical interval for TRIPTOFANO",
+      "unit": "μM",
+      "deficit_severo_min": 0.1,
+      "deficit_severo_max": 0.199,
+      "deficit_moderado_min": 0.2,
+      "deficit_moderado_max": 0.399,
+      "normal_min": 0.4,
+      "normal_max": 8.0,
+      "excesso_moderado_min": 8.001,
+      "excesso_moderado_max": 12.0,
+      "excesso_severo_min": 12.001,
+      "excesso_severo_max": 12.1
+    },
+    {
+      "id": "range-metabolito-valina",
+      "name": "Clinical interval for VALINA",
+      "unit": "μM",
+      "deficit_severo_min": 1.5,
+      "deficit_severo_max": 2.999,
+      "deficit_moderado_min": 3.0,
+      "deficit_moderado_max": 5.999,
+      "normal_min": 6.0,
+      "normal_max": 15.0,
+      "excesso_moderado_min": 15.001,
+      "excesso_moderado_max": 22.5,
+      "excesso_severo_min": 22.501,
+      "excesso_severo_max": 24.0
+    }
+  ],
+  "metabolites": [
+    {
+      "id": "metabolito-lisina",
+      "name": "LISINA",
+      "reference_range": [
+        "range-metabolito-lisina"
+      ]
+    },
+    {
+      "id": "metabolito-1-esterearoil-2-araquidonoil-fosfatidilcolina",
+      "name": "1-ESTEREAROIL-2-ARAQUIDONOIL-FOSFATIDILCOLINA",
+      "reference_range": [
+        "range-metabolito-1-esterearoil-2-araquidonoil-fosfatidilcolina"
+      ]
+    },
+    {
+      "id": "metabolito-1-estearoil-2-linoleoil-fosfatidilcolina",
+      "name": "1-ESTEAROIL-2-LINOLEOIL-FOSFATIDILCOLINA",
+      "reference_range": [
+        "range-metabolito-1-estearoil-2-linoleoil-fosfatidilcolina"
+      ]
+    },
+    {
+      "id": "metabolito-1-estearoil-lisofosfatidilcolina-hdl",
+      "name": "1-ESTEAROIL-LISOFOSFATIDILCOLINA [HDL]",
+      "reference_range": [
+        "range-metabolito-1-estearoil-lisofosfatidilcolina-hdl"
+      ]
+    },
+    {
+      "id": "metabolito-1-oleil-lisofosfatidilcolina-n9",
+      "name": "1-OLEIL-LISOFOSFATIDILCOLINA [N9]",
+      "reference_range": [
+        "range-metabolito-1-oleil-lisofosfatidilcolina-n9"
+      ]
+    },
+    {
+      "id": "metabolito-1-oleoil-2-estearoil-fosfatidilcolina-9",
+      "name": "1-OLEOIL-2-ESTEAROIL-FOSFATIDILCOLINA [9]",
+      "reference_range": [
+        "range-metabolito-1-oleoil-2-estearoil-fosfatidilcolina-9"
+      ]
+    },
+    {
+      "id": "metabolito-1-palmitoil-2-araquidonoil-fosfatidilcolina-ldl-ox",
+      "name": "1-PALMITOIL-2-ARAQUIDONOIL-FOSFATIDILCOLINA [LDL OX.]",
+      "reference_range": [
+        "range-metabolito-1-palmitoil-2-araquidonoil-fosfatidilcolina-ldl-ox"
+      ]
+    },
+    {
+      "id": "metabolito-1-palmitoil-2-docosaexenoil-fosfatidilcolina-3",
+      "name": "1-PALMITOIL-2-DOCOSAEXENOIL-FOSFATIDILCOLINA [3]",
+      "reference_range": [
+        "range-metabolito-1-palmitoil-2-docosaexenoil-fosfatidilcolina-3"
+      ]
+    },
+    {
+      "id": "metabolito-1-palmitoil-2-linoleoil-fosfatidilcolina",
+      "name": "1-PALMITOIL-2-LINOLEOIL-FOSFATIDILCOLINA",
+      "reference_range": [
+        "range-metabolito-1-palmitoil-2-linoleoil-fosfatidilcolina"
+      ]
+    },
+    {
+      "id": "metabolito-4-hidroxiprolina",
+      "name": "4- Hidroxiprolina",
+      "reference_range": [
+        "range-metabolito-4-hidroxiprolina"
+      ]
+    },
+    {
+      "id": "metabolito-acetil-l-carnitina",
+      "name": "ACETIL-L-CARNITINA",
+      "reference_range": [
+        "range-metabolito-acetil-l-carnitina"
+      ]
+    },
+    {
+      "id": "metabolito-acido-urico",
+      "name": "ÁCIDO ÚRICO",
+      "reference_range": [
+        "range-metabolito-acido-urico"
+      ]
+    },
+    {
+      "id": "metabolito-adenosina",
+      "name": "ADENOSINA",
+      "reference_range": [
+        "range-metabolito-adenosina"
+      ]
+    },
+    {
+      "id": "metabolito-dimetilarginina-assimetrica-adma",
+      "name": "Dimetilarginina Assimétrica [ADMA]",
+      "reference_range": [
+        "range-metabolito-dimetilarginina-assimetrica-adma"
+      ]
+    },
+    {
+      "id": "metabolito-alanina",
+      "name": "ALANINA",
+      "reference_range": [
+        "range-metabolito-alanina"
+      ]
+    },
+    {
+      "id": "metabolito-alfa-cetoglutarato",
+      "name": "ALFA-CETOGLUTARATO",
+      "reference_range": [
+        "range-metabolito-alfa-cetoglutarato"
+      ]
+    },
+    {
+      "id": "metabolito-arginina",
+      "name": "ARGININA",
+      "reference_range": [
+        "range-metabolito-arginina"
+      ]
+    },
+    {
+      "id": "metabolito-asparagina",
+      "name": "ASPARAGINA",
+      "reference_range": [
+        "range-metabolito-asparagina"
+      ]
+    },
+    {
+      "id": "metabolito-aspartato",
+      "name": "ASPARTATO",
+      "reference_range": [
+        "range-metabolito-aspartato"
+      ]
+    },
+    {
+      "id": "metabolito-butiril-l-carnitina",
+      "name": "BUTIRIL-L-CARNITINA",
+      "reference_range": [
+        "range-metabolito-butiril-l-carnitina"
+      ]
+    },
+    {
+      "id": "metabolito-cisteina",
+      "name": "CISTEÍNA",
+      "reference_range": [
+        "range-metabolito-cisteina"
+      ]
+    },
+    {
+      "id": "metabolito-cistina",
+      "name": "CISTINA",
+      "reference_range": [
+        "range-metabolito-cistina"
+      ]
+    },
+    {
+      "id": "metabolito-citrulina",
+      "name": "CITRULINA",
+      "reference_range": [
+        "range-metabolito-citrulina"
+      ]
+    },
+    {
+      "id": "metabolito-fenilalanina",
+      "name": "FENILALANINA",
+      "reference_range": [
+        "range-metabolito-fenilalanina"
+      ]
+    },
+    {
+      "id": "metabolito-gaba",
+      "name": "GABA",
+      "reference_range": [
+        "range-metabolito-gaba"
+      ]
+    },
+    {
+      "id": "metabolito-glicina",
+      "name": "GLICINA",
+      "reference_range": [
+        "range-metabolito-glicina"
+      ]
+    },
+    {
+      "id": "metabolito-glutamato",
+      "name": "GLUTAMATO",
+      "reference_range": [
+        "range-metabolito-glutamato"
+      ]
+    },
+    {
+      "id": "metabolito-glutamina",
+      "name": "GLUTAMINA",
+      "reference_range": [
+        "range-metabolito-glutamina"
+      ]
+    },
+    {
+      "id": "metabolito-glutationa-oxidada-gssg",
+      "name": "GLUTATIONA OXIDADA (GSSG)",
+      "reference_range": [
+        "range-metabolito-glutationa-oxidada-gssg"
+      ]
+    },
+    {
+      "id": "metabolito-glutationa-reduzida-gsh",
+      "name": "GLUTATIONA REDUZIDA (GSH)",
+      "reference_range": [
+        "range-metabolito-glutationa-reduzida-gsh"
+      ]
+    },
+    {
+      "id": "metabolito-glutationa-total",
+      "name": "GLUTATIONA TOTAL",
+      "reference_range": [
+        "range-metabolito-glutationa-total"
+      ]
+    },
+    {
+      "id": "metabolito-guanosina",
+      "name": "GUANOSINA",
+      "reference_range": [
+        "range-metabolito-guanosina"
+      ]
+    },
+    {
+      "id": "metabolito-histidina",
+      "name": "HISTIDINA",
+      "reference_range": [
+        "range-metabolito-histidina"
+      ]
+    },
+    {
+      "id": "metabolito-isoleucina",
+      "name": "ISOLEUCINA",
+      "reference_range": [
+        "range-metabolito-isoleucina"
+      ]
+    },
+    {
+      "id": "metabolito-isovaleril-l-carnitina",
+      "name": "ISOVALERIL-L-CARNITINA",
+      "reference_range": [
+        "range-metabolito-isovaleril-l-carnitina"
+      ]
+    },
+    {
+      "id": "metabolito-l-carnitina",
+      "name": "L-CARNITINA",
+      "reference_range": [
+        "range-metabolito-l-carnitina"
+      ]
+    },
+    {
+      "id": "metabolito-lactato",
+      "name": "LACTATO",
+      "reference_range": [
+        "range-metabolito-lactato"
+      ]
+    },
+    {
+      "id": "metabolito-leucina",
+      "name": "LEUCINA",
+      "reference_range": [
+        "range-metabolito-leucina"
+      ]
+    },
+    {
+      "id": "metabolito-malato",
+      "name": "MALATO",
+      "reference_range": [
+        "range-metabolito-malato"
+      ]
+    },
+    {
+      "id": "metabolito-metionina",
+      "name": "METIONINA",
+      "reference_range": [
+        "range-metabolito-metionina"
+      ]
+    },
+    {
+      "id": "metabolito-ornitina",
+      "name": "ORNITINA",
+      "reference_range": [
+        "range-metabolito-ornitina"
+      ]
+    },
+    {
+      "id": "metabolito-palmitoil-l-carnitina-c16",
+      "name": "PALMITOIL-L-CARNITINA [C16]",
+      "reference_range": [
+        "range-metabolito-palmitoil-l-carnitina-c16"
+      ]
+    },
+    {
+      "id": "metabolito-piruvato",
+      "name": "PIRUVATO",
+      "reference_range": [
+        "range-metabolito-piruvato"
+      ]
+    },
+    {
+      "id": "metabolito-prolina",
+      "name": "PROLINA",
+      "reference_range": [
+        "range-metabolito-prolina"
+      ]
+    },
+    {
+      "id": "metabolito-propionil-l-carnitina-c3",
+      "name": "PROPIONIL-L-CARNITINA [C3]",
+      "reference_range": [
+        "range-metabolito-propionil-l-carnitina-c3"
+      ]
+    },
+    {
+      "id": "metabolito-quinurenina",
+      "name": "QUINURENINA",
+      "reference_range": [
+        "range-metabolito-quinurenina"
+      ]
+    },
+    {
+      "id": "metabolito-serina",
+      "name": "SERINA",
+      "reference_range": [
+        "range-metabolito-serina"
+      ]
+    },
+    {
+      "id": "metabolito-succinato",
+      "name": "SUCCINATO",
+      "reference_range": [
+        "range-metabolito-succinato"
+      ]
+    },
+    {
+      "id": "metabolito-taurina",
+      "name": "TAURINA",
+      "reference_range": [
+        "range-metabolito-taurina"
+      ]
+    },
+    {
+      "id": "metabolito-tetradecanoil-l-carnitina",
+      "name": "TETRADECANOIL-L-CARNITINA",
+      "reference_range": [
+        "range-metabolito-tetradecanoil-l-carnitina"
+      ]
+    },
+    {
+      "id": "metabolito-timina",
+      "name": "TIMINA",
+      "reference_range": [
+        "range-metabolito-timina"
+      ]
+    },
+    {
+      "id": "metabolito-tirosina",
+      "name": "TIROSINA",
+      "reference_range": [
+        "range-metabolito-tirosina"
+      ]
+    },
+    {
+      "id": "metabolito-tmao-trimetilamina-n-oxido",
+      "name": "TMAO [Trimetilamina N-Óxido]",
+      "reference_range": [
+        "range-metabolito-tmao-trimetilamina-n-oxido"
+      ]
+    },
+    {
+      "id": "metabolito-treonina",
+      "name": "TREONINA",
+      "reference_range": [
+        "range-metabolito-treonina"
+      ]
+    },
+    {
+      "id": "metabolito-triptofano",
+      "name": "TRIPTOFANO",
+      "reference_range": [
+        "range-metabolito-triptofano"
+      ]
+    },
+    {
+      "id": "metabolito-valina",
+      "name": "VALINA",
+      "reference_range": [
+        "range-metabolito-valina"
+      ]
+    }
+  ]
+}

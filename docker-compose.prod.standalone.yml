@@ -1,0 +1,173 @@
+# Standalone production deployment without MLflow infrastructure
+# Use this for K8s-like minimal deployments
+# Run with: docker-compose -f docker-compose.prod.standalone.yml up -d
+
+services:
+  neo4j:
+    image: neo4j:5.26-community
+    container_name: ion-nutri-neo4j
+    ports:
+      - "7474:7474"  # HTTP port
+      - "7687:7687"  # Bolt port
+
+    environment:
+      - NEO4J_AUTH=${NEO4J_AUTH:-neo4j/password}
+      - NEO4J_PLUGINS=["apoc"]
+      - NEO4J_dbms_memory_heap_initial__size=512m
+      - NEO4J_dbms_memory_heap_max__size=2G
+      - NEO4J_dbms_memory_pagecache_size=1G
+      - NEO4J_apoc_export_file_enabled=true
+      - NEO4J_apoc_import_file_enabled=true
+      - NEO4J_apoc_import_file_use__neo4j__config=true
+      - NEO4J_dbms_default__listen__address=0.0.0.0
+      - NEO4J_dbms_security_procedures_unrestricted=apoc.*
+      - NEO4J_dbms_security_procedures_allowlist=apoc.*
+
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+      - neo4j_import:/var/lib/neo4j/import
+      - neo4j_plugins:/plugins
+
+    networks:
+      - ion-nutri-network
+
+    healthcheck:
+      test: ["CMD-SHELL", "cypher-shell -u neo4j -p password 'RETURN 1'"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+    restart: unless-stopped
+
+  # Data Loading Service - Populates Neo4j database
+  load-data:
+    build:
+      context: ./backend  # Context is the backend directory
+      dockerfile: Dockerfile
+
+    container_name: ion-nutri-load-data
+
+    # Network configuration
+    networks:
+      - ion-nutri-network
+
+    # Environment variables
+    environment:
+      - NEO4J_URI=bolt://ion-nutri-neo4j:7687
+      - NEO4J_USER=${NEO4J_USER:-neo4j}
+      - NEO4J_PASSWORD=${NEO4J_PASSWORD:-password}
+
+    # Volumes for accessing data files
+    volumes:
+      - ./backend/app/scripts/load_data/processed_data:/app/app/scripts/load_data/processed_data:ro
+
+    # Dependencies - wait for Neo4j to be healthy
+    depends_on:
+      neo4j:
+        condition: service_healthy
+
+    # Run the data loading script and exit
+    command: >
+      sh -c "
+        uv run python -m app.scripts.load_data.main
+      "
+
+    # Restart policy: don't restart if it completes successfully
+    restart: no
+
+  api:
+    # For production, pull from registry:
+    # image: ${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG:-latest}
+    
+    # For local testing, build from source:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+
+    container_name: ion-nutri-api
+    ports:
+      - "8000:8000"
+
+    environment:
+      # Application settings
+      - ENVIRONMENT=production
+      - DEBUG=false
+      - LOG_LEVEL=INFO
+      - ENABLE_LLM=true
+
+      # Neo4j settings
+      - NEO4J_URI=${NEO4J_URI:-bolt://ion-nutri-neo4j:7687}
+      - NEO4J_USER=${NEO4J_USER:-neo4j}
+      - NEO4J_PASSWORD=${NEO4J_PASSWORD:-password}
+
+      # LLM settings (required)
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - OPENROUTER_API_BASE=${OPENROUTER_API_BASE:-https://openrouter.ai/api/v1}
+      - OPENROUTER_MODEL=${OPENROUTER_MODEL:-openai/gpt-4o-mini}
+      - OPENROUTER_MAX_TOKENS=${OPENROUTER_MAX_TOKENS:-4096}
+      - OPENROUTER_TEMPERATURE=${OPENROUTER_TEMPERATURE:-0.1}
+      - OPENROUTER_MODEL_NAME=${OPENROUTER_MODEL_NAME:-gpt-4o-mini}
+
+      # Feature Flags
+      - FEATURE_USE_STRATEGY_PATTERN=${FEATURE_USE_STRATEGY_PATTERN:-false}
+
+      # MLflow disabled in production
+      - MLFLOW_ENABLED=false
+
+      # Version info
+      - BUILD_TIME=${BUILD_TIME:-}
+      - GIT_COMMIT=${GIT_COMMIT:-}
+      - GIT_BRANCH=${GIT_BRANCH:-}
+      - BUILD_NUMBER=${BUILD_NUMBER:-}
+
+    depends_on:
+      neo4j:
+        condition: service_healthy
+      load-data:
+        condition: service_completed_successfully
+
+    volumes:
+      - ./logs:/app/logs
+      - ./app/artifacts:/app/app/artifacts
+
+    networks:
+      - ion-nutri-network
+
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+    restart: unless-stopped
+
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+
+volumes:
+  neo4j_data:
+    driver: local
+    name: ion-nutri-neo4j-data
+  neo4j_logs:
+    driver: local
+    name: ion-nutri-neo4j-logs
+  neo4j_import:
+    driver: local
+    name: ion-nutri-neo4j-import
+  neo4j_plugins:
+    driver: local
+    name: ion-nutri-neo4j-plugins
+
+networks:
+  ion-nutri-network:
+    driver: bridge
+    name: ion-nutri-network

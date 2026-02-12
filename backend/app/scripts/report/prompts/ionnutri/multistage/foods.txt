@@ -1,0 +1,21 @@
+# IonNutri Foods Recommendations Prompt (Multistage)
+
+{{system_prompt}}
+
+## DADOS DO PACIENTE
+{{patient_data}}
+
+## DADOS METABÓLICOS
+{{metabolic_data}}
+
+## CONTEXTO ADICIONAL (RELATÓRIO ESTRUTURADO)
+{{previous_sections}}
+
+## RESULTADOS DOS ACHADOS
+{{findings_result}}
+
+## RESULTADOS DAS DEFICIÊNCIAS
+{{deficiencies_result}}
+
+## OBJETIVO
+Sugira alimentos recomendados de acordo com o perfil metabólico do paciente.

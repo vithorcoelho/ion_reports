@@ -1,0 +1,22 @@
+# VidaNova Supplements Prompt (Multistage)
+
+{{system_prompt}}
+
+## DADOS DO PACIENTE
+{{patient_data}}
+
+## DADOS METABÓLICOS
+{{metabolic_data}}
+
+## CONTEXTO ADICIONAL (RELATÓRIO ESTRUTURADO)
+{{previous_sections}}
+
+## RESULTADOS DOS ACHADOS
+{{findings_result}}
+
+## OBJETIVO
+Sugira suplementações focadas em performance física, energia e recuperação muscular baseadas nos dados metabólicos.
+
+PRIORIZE os suplementos recomendados pelo knowledge graph
+
+Baseie as recomendações nos dados metabólicos, deficiências identificadas e suplementos recomendados pelo knowledge graph.

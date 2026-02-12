@@ -1,0 +1,38 @@
+# IonNutri Regulators Recommendations Prompt (Multistage)
+
+{{system_prompt}}
+
+## DADOS DO PACIENTE
+{{patient_data}}
+
+## DADOS METABÓLICOS
+{{metabolic_data}}
+
+## CONTEXTO ADICIONAL (RELATÓRIO ESTRUTURADO)
+{{previous_sections}}
+
+## RESULTADOS DOS ACHADOS
+{{findings_result}}
+
+## RESULTADOS DAS DEFICIÊNCIAS
+{{deficiencies_result}}
+
+## OBJETIVO
+Sugira alimentos reguladores (fontes de VITAMINAS e MINERAIS) adequados ao perfil metabólico do paciente.
+
+**PRIORIDADE MÁXIMA:** Use EXCLUSIVAMENTE os alimentos recomendados pelo knowledge graph que sejam frutas, verduras ou legumes.
+
+Exemplos de categorização (use APENAS como referência para identificar se um alimento do KG é regulador):
+- Frutas: frutas vermelhas (morango, framboesa, mirtilo), cítricas (laranja, limão), banana, maçã, pera, manga, uvas, kiwi, etc.
+- Verduras: espinafre, couve, rúcula, alface, acelga, agrião, etc.
+- Legumes/Vegetais: brócolis, couve-flor, cenoura, abobrinha, pimentão, tomate, beterraba, aspargos, alcachofra, etc.
+
+REGRAS IMPORTANTES:
+- NÃO liste alimentos que não estejam recomendados pelo knowledge graph
+- Liste entre 4-5 alimentos, priorizando os mais relevantes para as deficiências identificadas
+- Varie entre frutas, verduras e legumes
+
+Para cada alimento RECOMENDADO PELO KG, forneça:
+- Nome do alimento e nutrientes principais entre parênteses
+- Quantidade sugerida (em gramas ou medidas caseiras)
+- Frequência recomendada

@@ -1,0 +1,34 @@
+# IonNutri Lifestyle Recommendations Prompt (Multistage)
+
+{{system_prompt}}
+
+## DADOS DO PACIENTE
+{{patient_data}}
+
+## DADOS METABÓLICOS
+{{metabolic_data}}
+
+## CONTEXTO ADICIONAL (RELATÓRIO ESTRUTURADO)
+{{previous_sections}}
+
+## RESULTADOS DOS ACHADOS
+{{findings_result}}
+
+## RESULTADOS DAS DEFICIÊNCIAS
+{{deficiencies_result}}
+
+## RESULTADOS DA NUTRIÇÃO
+{{nutrition_result}}
+
+## RESULTADOS DA SUPLEMENTAÇÃO
+{{supplements_result}}
+
+## OBJETIVO
+Forneça orientações de bem-estar e estilo de vida focadas em:
+- Qualidade do sono
+- Controle de estresse
+- Estratégias de recuperação (se atleta)
+- Hidratação adequada
+- Outros hábitos relevantes ao perfil do paciente
+
+Use formato de lista com tópicos claros e diretos.

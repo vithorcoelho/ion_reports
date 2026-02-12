@@ -1,0 +1,72 @@
+# IonNutri Summary Prompt (Multistage)
+
+{{system_prompt}}
+
+## DADOS DO PACIENTE
+{{patient_data}}
+
+## DADOS METABÓLICOS
+{{metabolic_data}}
+
+## CONTEXTO ADICIONAL (RELATÓRIO ESTRUTURADO)
+{{previous_sections}}
+
+## RESULTADOS DOS ACHADOS
+{{findings_result}}
+
+## RESULTADOS DAS DEFICIÊNCIAS
+{{deficiencies_result}}
+
+## RESULTADOS DA NUTRIÇÃO
+{{nutrition_result}}
+
+## RESULTADOS DA SUPLEMENTAÇÃO
+{{supplements_result}}
+
+## RESULTADOS DO ESTILO DE VIDA
+{{lifestyle_result}}
+
+## RESULTADOS DOS EXAMES
+{{exams_result}}
+
+## OBJETIVO
+Crie um relatório TNM narrativo em formato de prosa corrida, dividido em parágrafos bem estruturados:
+
+INICIE o texto com a frase:
+"O paciente X apresenta..."
+
+DESENVOLVA o conteúdo abordando os seguintes pontos DE FORMA INTEGRADA (sem tópicos ou listas):
+
+1. **Panorama geral dos desequilíbrios metabólicos**: Descreva brevemente os principais achados, como:
+   - Alterações em processos epigenéticos (metilação, acetilação)
+   - Saúde intestinal (disbiose, SIBO)
+   - Disfunção mitocondrial
+   - Estresse oxidativo
+   - Inflamação crônica de baixo grau
+
+2. **Comparação evolutiva** (se houver exames anteriores): Destaque melhoras ou pioras em relação a exames anteriores, mencionando possíveis causas dessas variações (ajustes na dieta, suplementação, treinamento, etc.)
+
+3. **Carências nutricionais**: Descreva insuficiências de vitaminas do complexo B e minerais (selênio, cobre, zinco, manganês), relacionando-as a:
+   - Sintomas clínicos
+   - Contextos fisiológicos (alta demanda metabólica, má absorção intestinal, uso de medicamentos, estresse oxidativo elevado)
+
+4. **Consequências metabólicas**: Explique como esses desequilíbrios impactam:
+   - Processos energéticos celulares
+   - Cognição e clareza mental
+   - Imunidade
+   - Recuperação muscular (se aplicável)
+   - Performance global
+
+5. **Conclusão**: Finalize reforçando a importância de intervenções personalizadas:
+   - Ajustes alimentares
+   - Suplementação direcionada
+   - Mudanças de estilo de vida
+   - Objetivo: restaurar equilíbrio metabólico, promover longevidade e otimizar desempenho físico e mental
+
+REQUISITOS DE FORMATO:
+- Use linguagem técnica, mas compreensível
+- Mantenha tom empático e humanizado
+- Texto fluido com parágrafos bem conectados
+- NÃO use listas ou bullet points
+- NÃO use markdown além de parágrafos normais
+- Conecte as ideias de forma natural e coesa

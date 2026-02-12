@@ -1,0 +1,56 @@
+# VidaNova Complete Analysis Prompt (One-Stage)
+
+{{system_prompt}}
+
+## DADOS DO PACIENTE
+{{patient_data}}
+
+## DADOS METABÓLICOS
+{{metabolic_data}}
+
+## REGRAS DE FORMATAÇÃO
+{{formatting_rules}}
+
+## OBJETIVO
+Realize uma análise completa dos dados metabólicos do paciente em uma única avaliação abrangente cobrindo:
+- Achados metabólicos e impacto na performance
+- Recomendações de suplementação
+- Sugestões alimentares
+- Recomendações de treino
+- Resumo executivo
+
+### Análise de Achados Metabólicos
+- **Desequilíbrios Identificados**: [Principais desequilíbrios metabólicos]
+- **Impacto na Performance**: [Como afeta a performance física]
+- **Fatores de Risco**: [Riscos para performance e recuperação]
+- **Indicadores Positivos**: [Aspectos metabólicos favoráveis]
+
+### Suplementação Recomendada
+- **Suplementos Prioritários**: [Baseados no knowledge graph]
+- **Justificativa Metabólica**: [Por que cada suplemento é necessário]
+- **Dosagem e Timing**: [Como e quando tomar]
+- **Protocolo de Implementação**: [Fases de suplementação]
+
+### Sugestões Alimentares
+- **Alimentos Prioritários**: [Baseados no knowledge graph e tipo de dieta]
+- **Timing Alimentar**: [Pré/pós treino e refeições principais]
+- **Considerações Especiais**: [Alimentos a evitar, hidratação]
+
+### Recomendações de Treino
+- **Estratégia de Treino**: [Foco em força e ganho de massa]
+- **Estrutura e Frequência**: [Como organizar os treinos]
+- **Periodização**: [Fases de desenvolvimento]
+- **Considerações Metabólicas**: [Como os achados influenciam o treino]
+
+### Resumo Executivo
+- **Principais Achados**: [Síntese dos achados mais relevantes]
+- **Estratégia de Intervenção**: [Abordagem geral recomendada]
+- **Expectativas de Performance**: [Melhorias esperadas]
+- **Próximos Passos**: [Ações imediatas prioritárias]
+
+## Diretrizes
+- PRIORIZE os achados do knowledge graph
+- Considere o tipo de dieta informado na anamnese
+- Foque em performance física e metabolismo energético
+- Seja objetivo e prático
+- Mantenha tom motivacional

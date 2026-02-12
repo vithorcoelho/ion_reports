@@ -1,0 +1,33 @@
+# IonNutri Supplements Recommendations Prompt (Multistage)
+
+{{system_prompt}}
+
+## DADOS DO PACIENTE
+{{patient_data}}
+
+## DADOS METABÓLICOS
+{{metabolic_data}}
+
+## CONTEXTO ADICIONAL (RELATÓRIO ESTRUTURADO)
+{{previous_sections}}
+
+## RESULTADOS DOS ACHADOS
+{{findings_result}}
+
+## RESULTADOS DAS DEFICIÊNCIAS
+{{deficiencies_result}}
+
+## RESULTADOS DA NUTRIÇÃO
+{{nutrition_result}}
+
+## OBJETIVO
+Sugira suplementações necessárias baseadas nos dados metabólicos e deficiências identificadas.
+
+PRIORIZE os suplementos recomendados pelo knowledge graph.
+
+Para cada suplemento, forneça:
+- Nome do suplemento
+- Dose sugerida (com unidade de medida)
+- Objetivo/justificativa clara relacionada aos achados metabólicos
+
+Organize em formato de tabela ou lista estruturada.

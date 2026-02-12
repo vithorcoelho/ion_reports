@@ -1,0 +1,112 @@
+{
+  "exam_data": {
+    "patient_id": "PP032",
+    "exam_date": "2025-08-14T00:00:00Z",
+    "metabolites": [
+      {
+        "name": "ACETIL-L-CARNITINA",
+        "value": 0.314
+      },
+      {
+        "name": "ADENOSINA",
+        "value": 0.618
+      },
+      {
+        "name": "L-CARNITINA",
+        "value": 0.986
+      },
+      {
+        "name": "GLUTAMINA",
+        "value": 35.800
+      },
+      {
+        "name": "ISOLEUCINA",
+        "value": 1.000
+      },
+      {
+        "name": "LACTATO",
+        "value": 149.000
+      },
+      {
+        "name": "LEUCINA",
+        "value": 45.900
+      },
+      {
+        "name": "PIRUVATO",
+        "value": 0.001
+      },
+      {
+        "name": "TMAO [Trimetilamina N-Óxido]",
+        "value": 0.051
+      },
+      {
+        "name": "VALINA",
+        "value": 31.400
+      },
+      {
+        "name": "PROPIONIL-L-CARNITINA",
+        "value": 0.026
+      }
+    ]
+  },
+  "anamnesis": {
+    "anamnesis_type": "vidanova",
+    "patient_id": "PP032",
+    "objective": "Melhora da composição corporal e ganho de massa muscular",
+    "personal_data": {
+      "age": 32,
+      "birth_date": "1993-01-01",
+      "age_detail": "32 anos",
+      "gender": "masculino",
+      "weight": 83,
+      "height": 1.76,
+      "bmi": 26.82
+    },
+    "context_factors": {
+      "medical_history": ["não informado"],
+      "intolerances": [],
+      "physical_activity": {
+        "frequency": "não informado",
+        "type": "não informado",
+        "intensity": "não informado"
+      },
+      "sleep": {
+        "quality": "não informado",
+        "hours": 7,
+        "issues": ["não informado"]
+      },
+      "alcohol_consumption": {
+        "frequency": "não informado",
+        "amount": "não informado"
+      },
+      "medications": [
+        {
+          "name": "Reposição hormonal de testosterona",
+          "frequency": "semanal",
+          "dosage": "0,4mg durateston"
+        }
+      ],
+      "stress_level": "não informado"
+    },
+    "diet_type": "Como de tudo, sem restrições específicas (onívora)",
+    "energy_level": "Depende da semana, difícil dizer",
+    "muscle_gain_goal": "Ganho de massa muscular",
+    "nutritionist_plan": "Não, mas já segui antes",
+    "difficulty_muscle_gain": "Um pouco, mas consigo evoluir",
+    "surgeries": ["não informado"],
+    "menopause_age": "não aplicável",
+    "tobacco_use": {
+      "uses_or_used": "não informado",
+      "frequency": "não informado"
+    },
+    "food_allergies": {
+      "has_allergy": "não informado",
+      "allergy_items": []
+    },
+    "food_avoidance": {
+      "avoids_food": "não informado",
+      "food_items": []
+    },
+    "supplements": ["Whey protein", "Pré-treinos (cafeína, taurina)", "Hormônios"]
+  }
+}

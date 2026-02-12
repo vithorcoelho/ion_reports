@@ -1,0 +1,42 @@
+# IonNutri Constructors Recommendations Prompt (Multistage)
+
+{{system_prompt}}
+
+## DADOS DO PACIENTE
+{{patient_data}}
+
+## DADOS METABÓLICOS
+{{metabolic_data}}
+
+## CONTEXTO ADICIONAL (RELATÓRIO ESTRUTURADO)
+{{previous_sections}}
+
+## RESULTADOS DOS ACHADOS
+{{findings_result}}
+
+## RESULTADOS DAS DEFICIÊNCIAS
+{{deficiencies_result}}
+
+## OBJETIVO
+Sugira alimentos construtores (fontes de PROTEÍNAS) adequados ao perfil metabólico do paciente.
+
+**PRIORIDADE MÁXIMA:** Use EXCLUSIVAMENTE os alimentos recomendados pelo knowledge graph que sejam fontes de proteína.
+
+Exemplos de categorização de proteínas (use APENAS como referência para identificar se um alimento do KG é proteína):
+- Carnes magras: frango, peru, carne bovina magra
+- Peixes: salmão, sardinha, tilápia, truta, pescada
+- Ovos
+- Leguminosas: lentilha, grão-de-bico, feijões, moyashi
+- Proteínas vegetais: tofu, tempeh, edamame, natto
+- Lácteos: iogurte natural, queijos
+- Cogumelos: shitake, shimeji, portobelo
+
+REGRAS IMPORTANTES:
+- NÃO liste alimentos que não estejam recomendados pelo knowledge graph
+- Liste entre 3-4 alimentos, priorizando os mais relevantes para o perfil do paciente
+- Varie entre fontes animais e vegetais conforme apropriado
+
+Para cada alimento RECOMENDADO PELO KG, forneça:
+- Nome do alimento e nutrientes principais entre parênteses
+- Quantidade sugerida (em gramas ou unidades)
+- Frequência recomendada

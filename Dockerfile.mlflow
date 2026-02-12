@@ -1,0 +1,18 @@
+FROM ghcr.io/mlflow/mlflow:v3.8.1
+
+# Install system dependencies for health checks
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+
+# Install PostgreSQL driver and S3 dependencies
+RUN pip install psycopg2-binary boto3
+
+# Set environment variables for S3 compatibility
+ENV MLFLOW_S3_ENDPOINT_URL=""
+ENV MLFLOW_S3_IGNORE_TLS=""
+ENV MLFLOW_S3_VERIFY_SSL=""
+
+# Expose port
+EXPOSE 5000
+
+# Default command
+CMD ["mlflow", "server", "--host", "0.0.0.0", "--port", "5000"]

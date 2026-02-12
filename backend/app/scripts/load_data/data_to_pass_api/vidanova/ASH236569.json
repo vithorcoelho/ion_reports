@@ -1,0 +1,140 @@
+{
+  "exam_data": {
+    "patient_id": "ASH236569",
+    "exam_date": "2025-07-02T00:00:00Z",
+    "metabolites": [
+        {
+          "id": "metabolito-acetil-l-carnitina",
+          "name": "ACETIL-L-CARNITINA",
+          "value": 0.692,
+          "unit": "μM"
+        },
+        {
+          "id": "metabolito-adenosina",
+          "name": "ADENOSINA",
+          "value": 0.338,
+          "unit": "μM"
+        },
+        {
+          "id": "metabolito-l-carnitina",
+          "name": "L-CARNITINA",
+          "value": 4.09,
+          "unit": "μM"
+        },
+        {
+          "id": "metabolito-glutamina",
+          "name": "GLUTAMINA",
+          "value": 206,
+          "unit": "μM"
+        },
+        {
+          "id": "metabolito-isoleucina",
+          "name": "ISOLEUCINA",
+          "value": 21.6,
+          "unit": "μM"
+        },
+        {
+          "id": "metabolito-lactato",
+          "name": "LACTATO",
+          "value": 35.7,
+          "unit": "μM"
+        },
+        {
+          "id": "metabolito-leucina",
+          "name": "LEUCINA",
+          "value": 35.4,
+          "unit": "μM"
+        },
+        {
+          "id": "metabolito-piruvato",
+          "name": "PIRUVATO",
+          "value": 60.5,
+          "unit": "μM"
+        },
+        {
+          "id": "metabolito-tmao-trimetilamina-n-oxido",
+          "name": "TMAO [Trimetilamina N-Óxido]",
+          "value": 2.26,
+          "unit": "μM"
+        },
+        {
+          "id": "metabolito-valina",
+          "name": "VALINA",
+          "value": 24.3,
+          "unit": "μM"
+        },
+        {
+          "id": "metabolito-propionil-l-carnitina",
+          "name": "PROPIONIL-L-CARNITINA",
+          "value": 0.395,
+          "unit": "μM"
+        }
+    ]
+  },
+  "anamnesis": {
+    "anamnesis_type": "vidanova",
+    "patient_id": "ASH236569",
+    "objective": "Melhora da composição corporal e condicionamento físico",
+    "personal_data": {
+      "age": 29,
+      "birth_date": "1995-08-11",
+      "age_detail": "29 anos, 10 meses e 1 dia",
+      "gender": "não informado",
+      "weight": 82.35,
+      "height": 1.89,
+      "bmi": 23.06
+    },
+    "context_factors": {
+      "medical_history": [
+        "Outros"
+      ],
+      "intolerances": [],
+      "physical_activity": {
+        "frequency": "7",
+        "type": "não informado",
+        "intensity": "não informado"
+      },
+      "sleep": {
+        "quality": "às vezes dorme tranquilamente",
+        "hours": 7.0,
+        "issues": ["não"]
+      },
+      "alcohol_consumption": {
+        "frequency": "1",
+        "amount": "1 a 2 vezes na semana"
+      },
+      "medications": [
+        {
+          "name": "Antibióticos",
+          "frequency": "não informado",
+          "dosage": "não informado"
+        }
+      ],
+      "stress_level": "mediano"
+    },
+    "diet_type": "Como de tudo, sem restrições específicas (onívora)",
+    "energy_level": 3,
+    "muscle_gain_goal": 2,
+    "surgeries": [
+      "não informado"
+    ],
+    "menopause_age": "não informado",
+    "tobacco_use": {
+      "uses_or_used": "não",
+      "frequency": "não "
+    },
+    "food_allergies": {
+      "has_allergy": "não",
+      "allergy_items": []
+    },
+    "food_avoidance": {
+      "avoids_food": "não",
+      "food_items": []
+    },
+    "supplements": [
+      "não informado ",
+      "não informado"
+    ]
+
+  }
+}

@@ -1,0 +1,45 @@
+# VidaNova One-Stage Markdown Report Generation Prompt
+
+Você é um especialista em comunicação médica e formatação de relatórios de performance (Vida Nova) em markdown.
+Sua tarefa é usar os dados estruturados de um paciente para criar um relatório claro, profissional e focado em performance, seguindo uma estrutura pré-definida.
+A linguagem deve ser técnica, mas acessível. O output deve ser unicamente o relatório em markdown.
+
+## DADOS DO PACIENTE
+{{patient_data}}
+
+## DADOS METABÓLICOS
+{{metabolic_data}}
+
+## CONTEXTO ADICIONAL (RELATÓRIO ESTRUTURADO)
+{{complete_result}}
+
+## OBJETIVO
+Crie um relatório de performance em formato markdown, utilizando os dados do JSON fornecido em "CONTEXTO ADICIONAL (RELATÓRIO ESTRUTURADO)".
+
+**Use EXATAMENTE a seguinte estrutura e títulos:**
+
+---
+
+# RELATÓRIO FINAL - Vida Nova
+
+(Crie um texto introdutório baseado no resumo executivo do JSON)
+
+---
+
+## Análise de Performance
+(Use o conteúdo da análise de achados metabólicos para descrever o status atual de performance)
+
+---
+
+## Sugestão Alimentar
+(Use o conteúdo das sugestões alimentares para criar uma visão consolidada e direta das recomendações alimentares, formatando cada recomendação como um item de lista simples com "-" para melhor legibilidade)
+
+---
+
+## Suplementação Sugerida
+(Liste cada suplemento da seção de suplementação, formatando com nome em negrito e os demais campos como tópicos)
+
+---
+
+## Dica de Treino
+(Use o conteúdo das recomendações de treino para descrever as recomendações, o que evitar e o foco)

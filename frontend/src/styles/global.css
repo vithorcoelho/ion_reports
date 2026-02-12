@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Prose styling for markdown content */
+@layer utilities {
+  .prose {
+    @apply text-gray-800;
+  }
+
+  .prose h1 {
+    @apply text-3xl font-bold mt-8 mb-4 text-gray-900;
+  }
+
+  .prose h2 {
+    @apply text-2xl font-bold mt-6 mb-3 text-gray-900;
+  }
+
+  .prose h3 {
+    @apply text-xl font-semibold mt-4 mb-2 text-gray-900;
+  }
+
+  .prose p {
+    @apply mb-4 leading-7;
+  }
+
+  .prose ul, .prose ol {
+    @apply mb-4 ml-6;
+  }
+
+  .prose li {
+    @apply mb-2;
+  }
+
+  .prose ul li {
+    @apply list-disc;
+  }
+
+  .prose ol li {
+    @apply list-decimal;
+  }
+
+  .prose strong {
+    @apply font-semibold text-gray-900;
+  }
+
+  .prose code {
+    @apply bg-gray-100 px-1 py-0.5 rounded text-sm font-mono;
+  }
+
+  .prose pre {
+    @apply bg-gray-100 p-4 rounded-lg overflow-x-auto mb-4;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-gray-300 pl-4 italic my-4;
+  }
+
+  .prose table {
+    @apply w-full border-collapse mb-4;
+  }
+
+  .prose th {
+    @apply bg-gray-100 p-2 border border-gray-300 font-semibold text-left;
+  }
+
+  .prose td {
+    @apply p-2 border border-gray-300;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Print styles for PDF generation */
+@media print {
+  /* Hide UI elements */
+  button,
+  nav,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Reset page margins and size */
+  @page {
+    margin: 2cm;
+    size: A4;
+  }
+
+  /* Optimize body for print */
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+  }
+
+  /* Optimize prose container */
+  .prose {
+    max-width: 100% !important;
+    font-size: 11pt;
+  }
+
+  /* Headings - prevent page breaks after */
+  .prose h1 {
+    @apply text-2xl font-bold mt-6 mb-3;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  .prose h2 {
+    @apply text-xl font-bold mt-5 mb-2;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  .prose h3 {
+    @apply text-lg font-semibold mt-4 mb-2;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* Paragraphs */
+  .prose p {
+    @apply mb-3;
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Lists - avoid breaking inside */
+  .prose ul,
+  .prose ol {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .prose li {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Tables */
+  .prose table {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .prose thead {
+    display: table-header-group;
+  }
+
+  /* Code blocks */
+  .prose pre {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    @apply text-xs;
+  }
+
+  /* Blockquotes */
+  .prose blockquote {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Remove shadows and backgrounds that don't print well */
+  .shadow,
+  .rounded-lg {
+    box-shadow: none !important;
+  }
+
+  /* Ensure proper contrast for print */
+  .prose strong {
+    @apply text-black;
+  }
+
+  /* Links - show URL after link text */
+  .prose a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  /* Container adjustments */
+  .max-w-4xl {
+    max-width: 100%;
+  }
+
+  .mx-auto {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .p-8 {
+    padding: 0;
+  }
+
+  /* Report metadata section */
+  .border-b {
+    border-bottom: 2px solid #000;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .grid {
+    display: block;
+  }
+
+  /* Force page breaks at specific points */
+  .print-page-break {
+    page-break-before: always;
+    break-before: always;
+  }
+}

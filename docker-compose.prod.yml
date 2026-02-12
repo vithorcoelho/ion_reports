@@ -1,0 +1,104 @@
+# Production overrides for docker-compose.yml
+# Use this file for production deployments
+
+services:
+  neo4j:
+    # Production Neo4j configuration
+    environment:
+      - NEO4J_AUTH=${NEO4J_AUTH:-neo4j/password}
+      - NEO4J_PLUGINS=["apoc"]
+      - NEO4J_dbms_memory_heap_initial__size=512m
+      - NEO4J_dbms_memory_heap_max__size=2G
+      - NEO4J_dbms_memory_pagecache_size=1G
+      - NEO4J_apoc_export_file_enabled=true
+      - NEO4J_apoc_import_file_enabled=true
+      - NEO4J_apoc_import_file_use__neo4j__config=true
+      - NEO4J_dbms_default__listen__address=0.0.0.0
+      - NEO4J_dbms_security_procedures_unrestricted=apoc.*
+      - NEO4J_dbms_security_procedures_allowlist=apoc.*
+
+    # Production restart policy
+    restart: unless-stopped
+
+    # Production volumes (ensure data persistence)
+    volumes:
+      - neo4j_data:/data
+      - neo4j_logs:/logs
+
+  api:
+    # For production, we typically pull from a registry
+    # Uncomment for ECR deployment:
+    # image: ${ECR_REGISTRY}/${ECR_REPOSITORY}:${IMAGE_TAG:-latest}
+
+    # For local production testing, uncomment this build section:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    environment:
+      # Production settings
+      - ENVIRONMENT=production
+      - DEBUG=false
+      - LOG_LEVEL=INFO
+
+      # Neo4j settings (use service name in container network)
+      - NEO4J_URI=${NEO4J_URI:-bolt://ion-nutri-neo4j:7687}
+      - NEO4J_USER=${NEO4J_USER:-neo4j}
+      - NEO4J_PASSWORD=${NEO4J_PASSWORD:-password}
+
+      # LLM settings
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - OPENROUTER_API_BASE=${OPENROUTER_API_BASE}
+      - OPENROUTER_MODEL=${OPENROUTER_MODEL}
+      - OPENROUTER_MAX_TOKENS=${OPENROUTER_MAX_TOKENS}
+      - OPENROUTER_TEMPERATURE=${OPENROUTER_TEMPERATURE}
+      - OPENROUTER_MODEL_NAME=${OPENROUTER_MODEL_NAME}
+
+      # Feature Flags
+      - FEATURE_USE_STRATEGY_PATTERN
+
+      # MLflow Configuration (default: disabled in production)
+      - MLFLOW_ENABLED=${MLFLOW_ENABLED:-false}
+
+      # Version info (these should be set in the image)
+      - BUILD_TIME=${BUILD_TIME:-}
+      - GIT_COMMIT=${GIT_COMMIT:-}
+      - GIT_BRANCH=${GIT_BRANCH:-}
+      - BUILD_NUMBER=${BUILD_NUMBER:-}
+
+    # Override dependencies - production may not have MLflow
+    depends_on:
+      - neo4j
+
+    # Production volumes (no source code mounting)
+    volumes:
+      - ./logs:/app/logs
+      - ./backend/app/artifacts:/app/app/artifacts
+
+    # Production restart policy
+    restart: unless-stopped
+
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 2G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+
+# Production volumes
+volumes:
+  neo4j_data:
+    driver: local
+    name: ion-nutri-neo4j-data
+  neo4j_logs:
+    driver: local
+    name: ion-nutri-neo4j-logs
+
+# Production network
+networks:
+  ion-nutri-network:
+    driver: bridge
+    name: ion-nutri-network

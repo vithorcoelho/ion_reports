@@ -1,0 +1,16 @@
+# IonNutri Findings Analysis Prompt (Multistage)
+
+{{system_prompt}}
+
+## DADOS DO PACIENTE
+{{patient_data}}
+
+## DADOS METABÓLICOS
+{{metabolic_data}}
+
+
+## CONTEXTO ADICIONAL (RELATÓRIO ESTRUTURADO)
+{{previous_sections}}
+
+## OBJETIVO
+Analise os dados metabólicos e descreva os principais achados clínicos relevantes para o paciente.

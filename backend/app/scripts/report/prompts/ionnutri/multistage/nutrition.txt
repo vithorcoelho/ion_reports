@@ -1,0 +1,52 @@
+# IonNutri Nutrition Recommendations Prompt (Multistage)
+
+{{system_prompt}}
+
+## DADOS DO PACIENTE
+{{patient_data}}
+
+## DADOS METABÓLICOS
+{{metabolic_data}}
+
+## CONTEXTO ADICIONAL (RELATÓRIO ESTRUTURADO)
+{{previous_sections}}
+
+## RESULTADOS DOS ACHADOS
+{{findings_result}}
+
+## RESULTADOS DAS DEFICIÊNCIAS
+{{deficiencies_result}}
+
+## OBJETIVO
+Sugira recomendações nutricionais personalizadas para correção das deficiências encontradas.
+
+**PRIORIDADE ABSOLUTA:** Use EXCLUSIVAMENTE os alimentos recomendados pelo knowledge graph. NÃO invente ou liste alimentos que não estejam nas recomendações do KG.
+
+Organize as recomendações em categorias DISTINTAS e SEM SOBREPOSIÇÃO:
+
+1. **Energéticos** - APENAS CARBOIDRATOS do KG:
+   Exemplos de categorização: tubérculos (batata doce, inhame, mandioquinha, cará), cereais integrais (arroz integral, quinoa, aveia), tapioca e farinhas
+   Liste entre 4-5 alimentos
+
+2. **Construtores** - APENAS PROTEÍNAS do KG:
+   Exemplos de categorização: carnes magras, peixes, ovos, leguminosas (lentilha, grão-de-bico, feijões), proteínas vegetais (tofu, tempeh), lácteos, cogumelos
+   Liste entre 8-10 alimentos
+
+3. **Reguladores** - FRUTAS, VERDURAS e LEGUMES do KG:
+   Exemplos de categorização: frutas diversas (frutas vermelhas, cítricas, banana, maçã), verduras (espinafre, couve, rúcula, alface), legumes/vegetais (brócolis, cenoura, abobrinha, pimentão)
+   Liste entre 4-5 alimentos
+
+4. **Energéticas e Construtoras** (Gorduras) - APENAS GORDURAS do KG:
+   Exemplos de categorização: óleos (azeite de oliva, óleo de coco), oleaginosas (castanhas, nozes, amêndoas), sementes (chia, linhaça, abóbora, gergelim), pastas (manteiga de amendoim, tahine), abacate
+   Liste entre 6-10 alimentos
+
+ATENÇÃO - Regras de Categorização:
+- NÃO repita alimentos entre categorias
+- Salmão e ovos vão em "Construtores", NÃO em "Energéticos"
+- Amêndoas e abacate vão em "Energéticas e Construtoras", NÃO em outras seções
+- APENAS use alimentos que estejam nas recomendações do knowledge graph
+
+Para cada alimento RECOMENDADO PELO KG, forneça:
+- Nome do alimento e nutrientes principais entre parênteses
+- Quantidade sugerida (em gramas ou unidades)
+- Frequência recomendada
