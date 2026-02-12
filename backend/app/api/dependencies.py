@@ -10,6 +10,7 @@ from pathlib import Path
 
 from app.core.config import settings
 from app.db.neo4j_client import Neo4jClient
+from app.db.report_job_repository import ReportJobRepository
 from app.db.unified_query import Neo4jKnowledgeQuery
 from app.services.kg.kg_service import KnowledgeGraphService
 from app.services.llm.llm_service import OpenRouterLLMService
@@ -89,6 +90,12 @@ def get_prompt_registry() -> MLflowPromptRegistry:
 
     """
     return MLflowPromptRegistry(Path(settings.PROMPT_REGISTRY_PATH))
+
+
+@lru_cache
+def get_report_job_repository() -> ReportJobRepository:
+    """Get singleton repository for async report jobs."""
+    return ReportJobRepository.from_settings()
 
 
 def get_coordinator() -> ReportCoordinator:

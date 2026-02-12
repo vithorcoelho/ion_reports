@@ -24,6 +24,17 @@ class Settings(BaseSettings):
     NEO4J_USER: str = os.getenv("NEO4J_USER", "neo4j")
     NEO4J_PASSWORD: str = os.getenv("NEO4J_PASSWORD", "password")
 
+    # PostgreSQL configuration (report jobs)
+    POSTGRES_HOST: str = os.getenv("POSTGRES_HOST", "localhost")
+    POSTGRES_PORT: int = int(os.getenv("POSTGRES_PORT", "5432"))
+    POSTGRES_DB: str = os.getenv("POSTGRES_DB", "ion_reports")
+    POSTGRES_USER: str = os.getenv("POSTGRES_USER", "ion_reports")
+    POSTGRES_PASSWORD: str = os.getenv("POSTGRES_PASSWORD", "ion_reports_password")
+    REPORT_JOBS_DATABASE_URL: str = os.getenv("REPORT_JOBS_DATABASE_URL", "")
+    REPORT_WORKER_POLL_INTERVAL_SECONDS: int = int(
+        os.getenv("REPORT_WORKER_POLL_INTERVAL_SECONDS", "2")
+    )
+
     # OpenRouter LLM configuration
     OPENROUTER_API_KEY: str = os.getenv("OPENROUTER_API_KEY", "")
     OPENROUTER_API_BASE: str = os.getenv(
