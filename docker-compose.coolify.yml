@@ -7,8 +7,6 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-ion_reports_password}
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    networks:
-      - internal
     healthcheck:
       test:
         [
@@ -42,8 +40,6 @@ services:
       - neo4j_logs:/logs
       - neo4j_import:/var/lib/neo4j/import
       - neo4j_plugins:/plugins
-    networks:
-      - internal
     healthcheck:
       test: ["CMD-SHELL", "cypher-shell -u $NEO4J_USER -p $NEO4J_PASSWORD 'RETURN 1'"]
       interval: 30s
@@ -65,8 +61,6 @@ services:
     depends_on:
       neo4j:
         condition: service_healthy
-    networks:
-      - internal
     command: >
       sh -c "
         uv run python -m app.scripts.load_data.main
@@ -81,6 +75,8 @@ services:
       - ENVIRONMENT=production
       - DEBUG=false
       - LOG_LEVEL=INFO
+      # Coolify detecta a porta exposta do servico por esta env var (nao exige "ports:" no host).
+      - SERVICE_URL_API_8000
       - ENABLE_LLM=true
       - NEO4J_URI=bolt://neo4j:7687
       - NEO4J_USER=${NEO4J_USER:-neo4j}
@@ -100,7 +96,6 @@ services:
       - POSTGRES_USER=${POSTGRES_USER:-ion_reports}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-ion_reports_password}
       - REPORT_WORKER_POLL_INTERVAL_SECONDS=2
-      - ION_API_DOMAIN=${ION_API_DOMAIN?ION_API_DOMAIN is required}
     depends_on:
       neo4j:
         condition: service_healthy
@@ -108,24 +103,6 @@ services:
         condition: service_healthy
       load-data:
         condition: service_completed_successfully
-    networks:
-      - internal
-      - coolify
-    labels:
-      - traefik.enable=true
-      # Traefik do Coolify (coolify-proxy) usa entrypoints "http"/"https"
-      - traefik.http.routers.ion-reports-http.rule=Host(`${ION_API_DOMAIN}`)
-      - traefik.http.routers.ion-reports-http.entrypoints=http
-      - traefik.http.routers.ion-reports-http.middlewares=ion-reports-https-redirect
-      - traefik.http.middlewares.ion-reports-https-redirect.redirectscheme.scheme=https
-
-      - traefik.http.routers.ion-reports.rule=Host(`${ION_API_DOMAIN}`)
-      - traefik.http.routers.ion-reports.entrypoints=https
-      - traefik.http.routers.ion-reports.tls=true
-      - traefik.http.routers.ion-reports.tls.certresolver=letsencrypt
-
-      - traefik.http.services.ion-reports.loadbalancer.server.port=8000
-      - traefik.docker.network=coolify
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:8000/health || exit 1"]
       interval: 30s
@@ -172,8 +149,6 @@ services:
         condition: service_completed_successfully
       api:
         condition: service_healthy
-    networks:
-      - internal
     command: ["uv", "run", "python", "-m", "app.workers.report_worker"]
     restart: unless-stopped
 
@@ -183,10 +158,3 @@ volumes:
   neo4j_logs:
   neo4j_import:
   neo4j_plugins:
-
-networks:
-  internal:
-    driver: bridge
-  coolify:
-    external: true
-    name: coolify
