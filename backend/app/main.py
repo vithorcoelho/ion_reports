@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from app.api.router import api_router
-from app.core.config import configure_mlflow, settings
+from app.core.config import configure_mlflow, get_allowed_origins, settings
 from app.core.logging import logger
 from app.core.version import get_build_info, get_version
 from app.db.neo4j_client import Neo4jClient
@@ -59,7 +59,7 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, replace with specific origins
+    allow_origins=get_allowed_origins(),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

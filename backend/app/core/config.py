@@ -18,6 +18,7 @@ class Settings(BaseSettings):
     # Server configuration
     HOST: str = os.getenv("HOST", "0.0.0.0")
     PORT: int = int(os.getenv("PORT", "8000"))
+    ALLOWED_ORIGINS: str = os.getenv("ALLOWED_ORIGINS", "*")
 
     # Neo4j configuration
     NEO4J_URI: str = os.getenv("NEO4J_URI", "bolt://localhost:7687")
@@ -90,6 +91,19 @@ class Settings(BaseSettings):
 
 # # Create global settings object
 settings = Settings()
+
+
+def get_allowed_origins() -> list[str]:
+    """Return CORS allowed origins from ALLOWED_ORIGINS env var.
+
+    Supports:
+    - "*" for any origin
+    - comma-separated list, e.g. "https://a.com,https://b.com"
+    """
+    raw = (settings.ALLOWED_ORIGINS or "*").strip()
+    if raw == "*":
+        return ["*"]
+    return [origin.strip() for origin in raw.split(",") if origin.strip()]
 
 
 def configure_mlflow() -> bool:
