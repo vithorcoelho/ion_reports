@@ -113,12 +113,12 @@ services:
     labels:
       - traefik.enable=true
       # Importante: o Traefik do Coolify usa entrypoints "http" e "https"
-      - traefik.http.routers.ion-api-http.rule=Host(`${ION_API_DOMAIN}`)
+      - traefik.http.routers.ion-api-http.rule=Host(`${ION_API_DOMAIN?ION_API_DOMAIN is required}`)
       - traefik.http.routers.ion-api-http.entrypoints=http
       - traefik.http.routers.ion-api-http.middlewares=ion-api-https-redirect
       - traefik.http.middlewares.ion-api-https-redirect.redirectscheme.scheme=https
 
-      - traefik.http.routers.ion-api.rule=Host(`${ION_API_DOMAIN}`)
+      - traefik.http.routers.ion-api.rule=Host(`${ION_API_DOMAIN?ION_API_DOMAIN is required}`)
       - traefik.http.routers.ion-api.entrypoints=https
       - traefik.http.routers.ion-api.tls=true
       - traefik.http.routers.ion-api.tls.certresolver=letsencrypt
@@ -203,4 +203,3 @@ networks:
   coolify:
     external: true
     name: coolify
-
