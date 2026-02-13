@@ -1,0 +1,206 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: ion-nutri-report-postgres
+    environment:
+      - POSTGRES_DB=ion_reports
+      - POSTGRES_USER=ion_reports
+      - POSTGRES_PASSWORD=ion_reports_password
+    volumes:
+      - recommended_postgres_data:/var/lib/postgresql/data
+    networks:
+      - ion-nutri-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ion_reports -d ion_reports"]
+      interval: 20s
+      timeout: 10s
+      retries: 8
+      start_period: 20s
+    restart: unless-stopped
+
+  neo4j:
+    image: neo4j:5.26-community
+    container_name: ion-nutri-neo4j
+    environment:
+      - NEO4J_AUTH=${NEO4J_AUTH:-neo4j/password}
+      - NEO4J_PLUGINS=["apoc"]
+      - NEO4J_dbms_memory_heap_initial__size=512m
+      - NEO4J_dbms_memory_heap_max__size=2G
+      - NEO4J_dbms_memory_pagecache_size=1G
+      - NEO4J_apoc_export_file_enabled=true
+      - NEO4J_apoc_import_file_enabled=true
+      - NEO4J_apoc_import_file_use__neo4j__config=true
+      - NEO4J_dbms_default__listen__address=0.0.0.0
+      - NEO4J_dbms_security_procedures_unrestricted=apoc.*
+      - NEO4J_dbms_security_procedures_allowlist=apoc.*
+    volumes:
+      - recommended_neo4j_data:/data
+      - recommended_neo4j_logs:/logs
+      - recommended_neo4j_import:/var/lib/neo4j/import
+      - recommended_neo4j_plugins:/plugins
+    networks:
+      - ion-nutri-network
+    healthcheck:
+      test: ["CMD-SHELL", "cypher-shell -u neo4j -p password 'RETURN 1'"]
+      interval: 30s
+      timeout: 10s
+      retries: 6
+      start_period: 30s
+    restart: unless-stopped
+
+  load-data:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ion-nutri-load-data
+    environment:
+      - NEO4J_URI=bolt://ion-nutri-neo4j:7687
+      - NEO4J_USER=${NEO4J_USER:-neo4j}
+      - NEO4J_PASSWORD=${NEO4J_PASSWORD:-password}
+    volumes:
+      - ./backend/app/scripts/load_data/processed_data:/app/app/scripts/load_data/processed_data:ro
+    depends_on:
+      neo4j:
+        condition: service_healthy
+    networks:
+      - ion-nutri-network
+    command: >
+      sh -c "
+        uv run python -m app.scripts.load_data.main
+      "
+    restart: "no"
+
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ion-nutri-api
+    environment:
+      - ENVIRONMENT=production
+      - DEBUG=false
+      - LOG_LEVEL=INFO
+      - ENABLE_LLM=true
+      - NEO4J_URI=bolt://ion-nutri-neo4j:7687
+      - NEO4J_USER=${NEO4J_USER:-neo4j}
+      - NEO4J_PASSWORD=${NEO4J_PASSWORD:-password}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - OPENROUTER_API_BASE=${OPENROUTER_API_BASE:-https://openrouter.ai/api/v1}
+      - OPENROUTER_MODEL=${OPENROUTER_MODEL:-openrouter/auto}
+      - OPENROUTER_MAX_TOKENS=${OPENROUTER_MAX_TOKENS:-4096}
+      - OPENROUTER_TEMPERATURE=${OPENROUTER_TEMPERATURE:-0.2}
+      - OPENROUTER_MODEL_NAME=${OPENROUTER_MODEL_NAME:-openrouter-auto}
+      - FEATURE_USE_STRATEGY_PATTERN=${FEATURE_USE_STRATEGY_PATTERN:-false}
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS:-*}
+      - MLFLOW_ENABLED=false
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=ion_reports
+      - POSTGRES_USER=ion_reports
+      - POSTGRES_PASSWORD=ion_reports_password
+      - REPORT_WORKER_POLL_INTERVAL_SECONDS=2
+      # Dominio para expor a API via Traefik do Coolify.
+      - ION_API_DOMAIN=${ION_API_DOMAIN}
+    depends_on:
+      neo4j:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      load-data:
+        condition: service_completed_successfully
+    networks:
+      - ion-nutri-network
+      - coolify
+    labels:
+      - traefik.enable=true
+      # Importante: o Traefik do Coolify usa entrypoints "http" e "https"
+      - traefik.http.routers.ion-api-http.rule=Host(`${ION_API_DOMAIN}`)
+      - traefik.http.routers.ion-api-http.entrypoints=http
+      - traefik.http.routers.ion-api-http.middlewares=ion-api-https-redirect
+      - traefik.http.middlewares.ion-api-https-redirect.redirectscheme.scheme=https
+
+      - traefik.http.routers.ion-api.rule=Host(`${ION_API_DOMAIN}`)
+      - traefik.http.routers.ion-api.entrypoints=https
+      - traefik.http.routers.ion-api.tls=true
+      - traefik.http.routers.ion-api.tls.certresolver=letsencrypt
+
+      - traefik.http.services.ion-api.loadbalancer.server.port=8000
+      # Garante que o Traefik encontre o container pela mesma rede que ele usa (coolify).
+      - traefik.docker.network=coolify
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:8000/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+    command:
+      ["uv", "run", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+    restart: unless-stopped
+
+  worker:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ion-nutri-report-worker
+    environment:
+      - ENVIRONMENT=production
+      - DEBUG=false
+      - LOG_LEVEL=INFO
+      - ENABLE_LLM=true
+      - NEO4J_URI=bolt://ion-nutri-neo4j:7687
+      - NEO4J_USER=${NEO4J_USER:-neo4j}
+      - NEO4J_PASSWORD=${NEO4J_PASSWORD:-password}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - OPENROUTER_API_BASE=${OPENROUTER_API_BASE:-https://openrouter.ai/api/v1}
+      - OPENROUTER_MODEL=${OPENROUTER_MODEL:-openrouter/auto}
+      - OPENROUTER_MAX_TOKENS=${OPENROUTER_MAX_TOKENS:-4096}
+      - OPENROUTER_TEMPERATURE=${OPENROUTER_TEMPERATURE:-0.2}
+      - OPENROUTER_MODEL_NAME=${OPENROUTER_MODEL_NAME:-openrouter-auto}
+      - FEATURE_USE_STRATEGY_PATTERN=${FEATURE_USE_STRATEGY_PATTERN:-false}
+      - MLFLOW_ENABLED=false
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=ion_reports
+      - POSTGRES_USER=ion_reports
+      - POSTGRES_PASSWORD=ion_reports_password
+      - REPORT_WORKER_POLL_INTERVAL_SECONDS=2
+      - REPORT_WORKER_ID=worker-1
+    depends_on:
+      neo4j:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      load-data:
+        condition: service_completed_successfully
+      api:
+        condition: service_healthy
+    networks:
+      - ion-nutri-network
+    command: ["uv", "run", "python", "-m", "app.workers.report_worker"]
+    restart: unless-stopped
+
+volumes:
+  recommended_postgres_data:
+    driver: local
+    name: ion-nutri-recommended-postgres-data
+  recommended_neo4j_data:
+    driver: local
+    name: ion-nutri-recommended-neo4j-data
+  recommended_neo4j_logs:
+    driver: local
+    name: ion-nutri-recommended-neo4j-logs
+  recommended_neo4j_import:
+    driver: local
+    name: ion-nutri-recommended-neo4j-import
+  recommended_neo4j_plugins:
+    driver: local
+    name: ion-nutri-recommended-neo4j-plugins
+
+networks:
+  ion-nutri-network:
+    driver: bridge
+    name: ion-nutri-network
+  # Rede externa do Coolify (onde o container coolify-proxy/Traefik esta).
+  coolify:
+    external: true
+    name: coolify
+
