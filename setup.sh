@@ -414,7 +414,7 @@ DEBUG=true
 LOG_LEVEL=INFO
 
 # LLM Settings (adjust as needed)
-OPENAI_API_KEY=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
+OPENAI_API_KEY=
 EOF
 
     if file_exists ".env"; then
